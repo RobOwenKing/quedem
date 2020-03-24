@@ -1,6 +1,6 @@
 .navbar-quedem {
   justify-content: space-between;
-  background: $dark-purple;
+  background: $purple-dark;
   height: 50px;
 }
 
@@ -16,7 +16,7 @@
   width: 40px;
 }
 
-.nav-item {
+.nav-item > a {
  color: white;
 }
 
