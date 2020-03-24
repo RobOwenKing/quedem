@@ -10,10 +10,51 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_23_143720) do
+ActiveRecord::Schema.define(version: 2020_03_24_120709) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "date_choices", force: :cascade do |t|
+    t.bigint "hangout_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["hangout_id"], name: "index_date_choices_on_hangout_id"
+  end
+
+  create_table "date_votes", force: :cascade do |t|
+    t.bigint "date_choice_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["date_choice_id"], name: "index_date_votes_on_date_choice_id"
+    t.index ["user_id"], name: "index_date_votes_on_user_id"
+  end
+
+  create_table "hangouts", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "name"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_hangouts_on_user_id"
+  end
+
+  create_table "location_choices", force: :cascade do |t|
+    t.bigint "hangout_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["hangout_id"], name: "index_location_choices_on_hangout_id"
+  end
+
+  create_table "location_votes", force: :cascade do |t|
+    t.bigint "location_choice_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["location_choice_id"], name: "index_location_votes_on_location_choice_id"
+    t.index ["user_id"], name: "index_location_votes_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -27,4 +68,11 @@ ActiveRecord::Schema.define(version: 2020_03_23_143720) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "date_choices", "hangouts"
+  add_foreign_key "date_votes", "date_choices"
+  add_foreign_key "date_votes", "users"
+  add_foreign_key "hangouts", "users"
+  add_foreign_key "location_choices", "hangouts"
+  add_foreign_key "location_votes", "location_choices"
+  add_foreign_key "location_votes", "users"
 end
