@@ -1,12 +1,38 @@
-.navbar-lewagon {
+.navbar-quedem {
   justify-content: space-between;
-  background: white;
+  background: $dark-purple;
+  height: 50px;
 }
 
-.navbar-lewagon .navbar-collapse {
+.navbar-quedem .navbar-collapse {
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
+.navbar-toggler-icon {
+  color: #ffffff;
+}
+
+.navbar-quedem .navbar-brand img {
   width: 40px;
+}
+
+.nav-item {
+ color: white;
+}
+
+.navbar-brand > h1 {
+  font-family: $title-font;
+  position: absolute;
+  width: 152px;
+  height: 60px;
+  left: 20px;
+  top: calc(50% - 60px/2 + 12.5px);
+  font-family: Lobster;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 48px;
+  line-height: 60px;
+  /* identical to box height */
+  color: #FFFFFF;
+  text-shadow: 0px 4px 1px #000000;
 }
