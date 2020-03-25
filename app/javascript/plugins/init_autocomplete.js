@@ -1,9 +1,16 @@
 import places from 'places.js';
 
+// console.log(place.photos[0].getUrl()
+
 const addPlaceCard = (place, container) => {
-  const card = `<div class="">
-  <h1>${place.name}</h1>
-  <div>`
+  const card = `<div class="card-location">
+  <img src=${place.photos[0].getUrl()} />
+  <div class="card-location-infos">
+  <h2>${place.name}</h2>
+  <h3>${place.formatted_address}</h3>
+  <p class="rating">Rating: ${place.rating}</p>
+  </div>
+  </div>`
   container.insertAdjacentHTML('beforeend', card)
 }
 
