@@ -5,6 +5,7 @@ class HangoutsController < ApplicationController
 
   def new
     @hangout = Hangout.new
+    @hangout.location_choices.build
   end
 
   def create

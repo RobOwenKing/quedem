@@ -1,0 +1,9 @@
+<input id="place-choice" type="text">
+<div class="location-choices-container">
+  <%= f.simple_fields_for :location_choices do |lc| %>
+    <%= render 'location_choice_fields', f: lc %>
+    <div class="links">
+      <%= link_to_add_association 'add location', f, :location_choices %>
+    </div>
+  <% end %>
+</div>
