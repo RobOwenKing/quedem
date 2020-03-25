@@ -1,5 +1,5 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-quedem">
-  <%= link_to "#", class: "navbar-brand" do %>
+  <%= link_to root_path, class: "navbar-brand" do %>
     <h1>Quedem</h1>
     <%#= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
     <% end %>
@@ -28,7 +28,7 @@
         </div>
       <% else %>
         <div class="nav-item">
-          <%= link_to "Login", new_user_session_path, class: "nav-link btn-login" %>
+          <%= link_to "Signup", new_user_registration_path, class: "nav-link btn-login" %>
         </div>
       <% end %>
     <!-- </ul>
