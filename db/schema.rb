@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_25_121526) do
+ActiveRecord::Schema.define(version: 2020_03_25_144108) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 2020_03_25_121526) do
     t.bigint "hangout_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "date"
     t.index ["hangout_id"], name: "index_date_choices_on_hangout_id"
   end
 
@@ -54,6 +55,7 @@ ActiveRecord::Schema.define(version: 2020_03_25_121526) do
     t.bigint "hangout_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "location"
     t.index ["hangout_id"], name: "index_location_choices_on_hangout_id"
   end
 
