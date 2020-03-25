@@ -1,4 +1,26 @@
-h2 {
- font-family: $body-font;
+.tag-line h2 {
+  font-family: $body-font;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 57px;
+  margin-top: 40px;
 }
 
+.home-img img {
+  width: 345px;
+  height: 286px;
+}
+
+.create-hangout-btn {
+  display: flex;
+  height: 55px;
+  margin-top: 24px;
+  text-align: center;
+  align-items: center;
+}
+
+.hangout-btn {
+  flex-grow: 1;
+  font-size: 24px;
+}
