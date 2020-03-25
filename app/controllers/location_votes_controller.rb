@@ -8,13 +8,13 @@ class LocationVotesController < ApplicationController
     @location_vote.location_choice = @location_choice
     @location_vote.save
 
-    redirect_to location_choice_path(@location_choice)
+    # redirect_to location_choice_path(@location_choice)
   end
 
   def destroy
     @location_vote.destroy
 
-    redirect_to location_votes_path
+    # redirect_to location_votes_path
   end
 
   private
