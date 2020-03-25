@@ -1,0 +1,48 @@
+
+// Location card for where page.
+
+.card-location {
+  overflow: hidden;
+  height: 120px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+}
+
+.card-location img {
+  height: 100%;
+  width: 120px;
+  object-fit: cover;
+}
+
+.card-location h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-location p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.card-location .card-location-infos {
+  padding: 16px;
+}
+
+
+// HTML for this card
+// <div class="card-location">
+//     <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+//     <div class="card-location-infos">
+//       <h2>Location name</h2>
+//       <p>Location description with <strong>relevant info</strong> only.</p>
+//       <p>Review stars</p>
+//       <p>Delete btn</p>
+//     </div>
+//   </div>
+// </div>
