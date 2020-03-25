@@ -6,7 +6,7 @@
   height: 102px;
   left: 17px;
   top: 302px;
-  border: 1px solid $purple-dark;
+  border: 2px solid $purple-dark;
 }
 
 .card-date h2 {
@@ -19,8 +19,8 @@
   font-family: $body-font;
   font-style: normal;
   font-weight: bold;
-  font-size: 24px;
-  line-height: 24px;
+  font-size: 36px;
+  line-height: 32px;
   letter-spacing: -1px;
 
   color: #000000;
@@ -36,8 +36,7 @@
   font-family: $body-font;
   font-style: normal;
   font-weight: bold;
-  font-size: 16px;
-  letter-spacing: -1px;
+  font-size: 24px;
   line-height: 16px;
 
   color: #000000;
@@ -45,3 +44,8 @@
 
 
 // Possible HTML
+
+// <div class="card-date">
+//   <h2>MAR 4th</h2>
+//   <h3>TUE 7:00pm</h3>
+// </div>
