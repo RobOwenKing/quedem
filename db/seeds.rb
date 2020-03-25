@@ -33,17 +33,17 @@ puts "Hangout created..."
 
 location_1 = LocationChoice.create!(
   hangout_id: party.id,
-  location: "333 Green St."
+  address: "333 Green St."
   )
 
 location_2 = LocationChoice.create!(
   hangout_id: party.id,
-  location: "2564 Seabreeze Way."
+  address: "2564 Seabreeze Way."
   )
 
 location_3 = LocationChoice.create!(
   hangout_id: party.id,
-  location: "4524 Tyne Blvd."
+  address: "4524 Tyne Blvd."
   )
 
 puts "Location choices generated"
