@@ -1,0 +1,65 @@
+
+// Location card for where page.
+
+.card-location {
+  overflow: hidden;
+  height: 120px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+}
+
+.card-location img {
+  height: 100%;
+  width: 120px;
+  object-fit: cover;
+}
+
+.card-location .card-location-infos {
+  padding: 8px;
+  position: relative;
+}
+
+.card-location h2 {
+  font-size: 24px;
+  font-weight: bold;
+  position: absolute;
+}
+
+.card-location h3 {
+  font-size: 18px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 8px;
+  margin-top: 32px;
+}
+
+.review-stars {
+  margin-bottom: 0px;
+}
+
+.card-delete {
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+}
+
+
+// Possible HTML for hangout view
+// <div class="card-location">
+//   <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+//     <div class="card-location-infos">
+//       <h2>Location name</h2>
+//       <h3>Location description with <strong>relevant info</strong> only.</h3>
+//       <ul class="review-stars list-inline">
+//         <li class="list-inline-item">⭐️</li>
+//         <li class="list-inline-item">⭐️ </li>
+//         <li class="list-inline-item">⭐️ </li>
+//         <li class="list-inline-item">⭐️ </li>
+//       </ul>
+//       <div class="card-delete">
+//         <%= link_to "Delete", class: "btn btn-danger"  %>
+//       </div>
+//     </div>
+// </div>
