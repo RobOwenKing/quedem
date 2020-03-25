@@ -16,33 +16,50 @@
   object-fit: cover;
 }
 
-.card-location h2 {
-  font-size: 16px;
-  font-weight: bold;
-  margin: 0;
+.card-location .card-location-infos {
+  padding: 8px;
+  position: relative;
 }
 
-.card-location p {
-  font-size: 12px;
+.card-location h2 {
+  font-size: 24px;
+  font-weight: bold;
+  position: absolute;
+}
+
+.card-location h3 {
+  font-size: 18px;
   line-height: 1.4;
   opacity: .7;
-  margin-bottom: 0;
-  margin-top: 8px;
+  margin-bottom: 8px;
+  margin-top: 32px;
 }
 
-.card-location .card-location-infos {
-  padding: 16px;
+.review-stars {
+  margin-bottom: 0px;
+}
+
+.card-delete {
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
 }
 
 
-// HTML for this card
+// Possible HTML for hangout view
 // <div class="card-location">
-//     <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+//   <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
 //     <div class="card-location-infos">
 //       <h2>Location name</h2>
-//       <p>Location description with <strong>relevant info</strong> only.</p>
-//       <p>Review stars</p>
-//       <p>Delete btn</p>
+//       <h3>Location description with <strong>relevant info</strong> only.</h3>
+//       <ul class="review-stars list-inline">
+//         <li class="list-inline-item">⭐️</li>
+//         <li class="list-inline-item">⭐️ </li>
+//         <li class="list-inline-item">⭐️ </li>
+//         <li class="list-inline-item">⭐️ </li>
+//       </ul>
+//       <div class="card-delete">
+//         <%= link_to "Delete", class: "btn btn-danger"  %>
+//       </div>
 //     </div>
-//   </div>
 // </div>
