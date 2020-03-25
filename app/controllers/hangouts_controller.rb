@@ -21,6 +21,6 @@ class HangoutsController < ApplicationController
   end
 
   def hangout_params
-    params.require(:hangout).permit(:title, :content)
+    params.require(:hangout).permit(:name, :description)
   end
 end
