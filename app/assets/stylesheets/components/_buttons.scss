@@ -1,0 +1,45 @@
+.btn-primary {
+  color: white;
+  padding: 8px 20px;
+  border-radius: 4px;
+  font-weight: bold;
+  background: linear-gradient($purple-light, $purple);
+  transition: background 0.3s ease;
+  border: 1px solid $purple;
+}
+
+.btn-primary:hover {
+  background: linear-gradient($purple, $purple-dark);
+  color: white;
+}
+
+.btn-secondary {
+  color: $purple;
+  padding: 8px 20px;
+  border-radius: 4px;
+  font-weight: bold;
+  background-color: white;
+  transition: background 0.3s ease;
+  border: 1px solid $purple;
+  opacity: 0.9;
+}
+
+.btn-secondary:hover {
+  opacity: 1;
+  color: $purple;
+}
+
+.btn-login {
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  padding: 6px 20px;
+  font-weight: lighter;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.btn-login:hover {
+  opacity: 1;
+  background-color: #ffffff;
+  color: $purple-dark
+}
