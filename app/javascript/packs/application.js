@@ -1,5 +1,6 @@
 import "bootstrap";
 import {initAutocomplete} from "../plugins/init_autocomplete";
 initAutocomplete();
-import {createDateListeners} from "../functions/polls";
-createDateListeners();
+import { dateListeners, rsvpListeners } from "../functions/polls";
+dateListeners();
+rsvpListeners();

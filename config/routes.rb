@@ -20,4 +20,6 @@ Rails.application.routes.draw do
 
   resources :location_votes, only: :destroy
   resources :date_votes, only: :destroy
+
+  resources :users, only: [ :create, :update ]
 end

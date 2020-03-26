@@ -3,7 +3,7 @@ const dateChoices = document.querySelectorAll(".card-date");
 // The hidden input field to record the user's choices
 const dateInput = document.getElementById("date-votes");
 
-const createDateListeners = () => {
+const dateListeners = () => {
   dateChoices.forEach(date => {
     date.addEventListener('click', (event) => {
       // Toggle whether the card has checked style class or not
@@ -31,4 +31,18 @@ const createDateListeners = () => {
   });
 };
 
-export { createDateListeners };
+const going = document.getElementById("going");
+const maybe = document.getElementById("maybe");
+const no = document.getElementById("no");
+const rsvp = [going, maybe, no];
+const rsvpInput = document.getElementById("attendance");
+
+const rsvpListeners = () => {
+  rsvp.forEach(answer => {
+    answer.addEventListener('click', (event) => {
+      rsvpInput.value = answer.dataset.id
+    });
+  });
+};
+
+export { dateListeners, rsvpListeners };
