@@ -1,12 +1,12 @@
-  <div class="tag-line">
-    <h2>Give your hangout a catchy title:</h2>
+<div class="tag-line">
+  <h2>Give your hangout a catchy title:</h2>
+</div>
+
+<div class="title-input-container">
+  <%= f.input :name, label: false, placeholder: "Hangout name goes here" %>
+
+  <div class="create-hangout-btn">
+    <%= link_to "Next", new_hangout_path, class: "hangout-btn btn-primary" %>
   </div>
 
-  <div class="title-input-container">
-    <%= f.input :name %>
-
-    <div class="create-hangout-btn">
-      <%= link_to "Next", new_hangout_path, class: "hangout-btn btn-primary" %>
-    </div>
-
-  </div>
+</div>
