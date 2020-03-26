@@ -1,5 +1,6 @@
 <%= simple_form_for (@hangout) do |f| %>
 <%= render 'what', f: f %>
+<%= render 'when', f: f %>
 <%= render 'where', f: f %>
 <%= f.submit "submit" %>
 <% end %>
