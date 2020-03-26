@@ -1,3 +1,5 @@
+
+
 <h1><%= @hangout.name %></h1>
 <p><%= @hangout.description %></p>
 
@@ -14,3 +16,9 @@
     <% end %>
   </div>
 <h3>Where?</h3>
+<% if @hangout.user == current_user %>
+  <div class="share-link">
+    Link:
+    <%= request.original_url %>
+  </div>
+<% end %>

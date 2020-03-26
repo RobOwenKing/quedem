@@ -20,4 +20,5 @@ Rails.application.routes.draw do
 
   resources :location_votes, only: :destroy
   resources :date_votes, only: :destroy
+  get "/dashboard", to: "dashboard#show", as: :dashboard
 end
