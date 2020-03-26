@@ -13,6 +13,12 @@
   // left: 17px;
   // top: 302px;
   border: 2px solid $purple-dark;
+  color: #000000;
+}
+
+.card-date.checked {
+  background-color: $purple-dark;
+  color: white;
 }
 
 .card-date h2 {
@@ -31,8 +37,6 @@
   letter-spacing: -1px;
 
   margin: 12px 8px;
-
-  color: #000000;
 }
 
 .card-date h3 {
@@ -50,8 +54,6 @@
   line-height: 16px;
 
   margin: 12px 8px;
-
-  color: #000000;
 }
 
 
