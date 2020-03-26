@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_25_152147) do
+ActiveRecord::Schema.define(version: 2020_03_26_101641) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,6 +57,8 @@ ActiveRecord::Schema.define(version: 2020_03_25_152147) do
     t.datetime "updated_at", null: false
     t.string "title"
     t.string "address"
+    t.float "rating"
+    t.string "photo"
     t.index ["hangout_id"], name: "index_location_choices_on_hangout_id"
   end
 

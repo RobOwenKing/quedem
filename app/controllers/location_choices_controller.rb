@@ -12,6 +12,6 @@ class LocationChoicesController < ApplicationController
   private
 
   def location_choice_params
-    # params.require(:location_choice).permit( ??? )
+    params.require(:location_choice).permit(:title, :address, :rating, :photo)
   end
 end
