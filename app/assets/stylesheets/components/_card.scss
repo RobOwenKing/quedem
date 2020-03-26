@@ -7,7 +7,7 @@
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
-  align-items: center;
+  margin: 8px 10px 10px 8px;
 }
 
 .card-location img {
@@ -18,31 +18,26 @@
 
 .card-location .card-location-infos {
   padding: 8px;
-  position: relative;
+  flex-direction: column;
+  height: 120px;
 }
 
 .card-location h2 {
   font-size: 24px;
   font-weight: bold;
-  position: absolute;
 }
 
 .card-location h3 {
   font-size: 18px;
   line-height: 1.4;
   opacity: .7;
-  margin-bottom: 8px;
-  margin-top: 32px;
 }
 
-.review-stars {
-  margin-bottom: 0px;
+.rating {
+  margin-top: -5px;
 }
 
 .card-delete {
-  position: absolute;
-  right: 5px;
-  bottom: 5px;
 }
 
 
