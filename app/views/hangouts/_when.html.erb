@@ -1,11 +1,12 @@
-
-<div class="calendar-container">
-<%#= f.input :choices, as: :string, required: false, input_html: {class: "datepicker"} %>
-<input type="text" class="datepicker" name="date_choices">
+<div class="tag-line">
+  <h2>When do you want to meet up?</h2>
 </div>
 
+<div class="title-input-container">
+<%#= f.input :choices, as: :string, required: false, input_html: {class: "datepicker"} %>
+  <input type="text" class="datepicker" placeholder="Pick up to 3 dates" name="date_choices">
 
-
-<div class="create-hangout-btn">
-  <%= link_to "Next", new_hangout_path, class: "hangout-btn btn-primary" %>
+  <div class="create-hangout-btn">
+    <%= link_to "Next", new_hangout_path, class: "hangout-btn btn-primary" %>
+  </div>
 </div>
