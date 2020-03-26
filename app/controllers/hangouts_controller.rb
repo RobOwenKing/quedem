@@ -2,7 +2,7 @@ class HangoutsController < ApplicationController
   before_action :set_hangout, only: :show
 
   def show
-    # raise
+    @user = current_user || User.new
   end
 
   def new

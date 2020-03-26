@@ -7,10 +7,17 @@
   <% end %>
   <div class="date-cards">
     <% @hangout.date_choices.each do |date| %>
-      <div class="card-date">
+      <div class="card-date" data-id="<%= date.id %>">
         <h2><%= three_letter_month(date.date) %> <%= date_as_ordinal(date.date) %></h2>
         <h3><%= three_letter_day(date.date) %> 7:00pm</h3>
       </div>
     <% end %>
   </div>
 <h3>Where?</h3>
+
+
+<%= simple_form_for @user do |f| %>
+  <%= f.input :name %>
+  <input type="text" name="date_votes">
+  <input type="text" name="location_votes">
+<% end %>
