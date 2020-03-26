@@ -53,12 +53,12 @@ date_1 = DateChoice.create!(
   date: Time.now + 3.hours,
   )
 
-date_1 = DateChoice.create!(
+date_2 = DateChoice.create!(
   hangout_id: party.id,
   date: Time.now + 1.day,
   )
 
-date_1 = DateChoice.create!(
+date_3 = DateChoice.create!(
   hangout_id: party.id,
   date: Time.now + 1.week,
   )
