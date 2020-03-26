@@ -1,7 +1,9 @@
 class HangoutsController < ApplicationController
   before_action :set_hangout, only: :show
 
-  def show; end
+  def show
+    # raise
+  end
 
   def new
     @hangout = Hangout.new
@@ -10,8 +12,13 @@ class HangoutsController < ApplicationController
 
   def create
     @hangout = Hangout.new(hangout_params)
-    @hangout.save
-    redirect_to hangout_path(@hangout)
+    @hangout.user = current_user
+    if @hangout.save
+
+      redirect_to hangout_path(@hangout)
+    else
+      render :new
+    end
   end
 
   private
@@ -21,6 +28,6 @@ class HangoutsController < ApplicationController
   end
 
   def hangout_params
-    params.require(:hangout).permit(:name, :description)
+    params.require(:hangout).permit(:name, :description, location_choices_attributes: [:title, :address])
   end
 end

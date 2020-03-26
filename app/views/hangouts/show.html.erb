@@ -1,2 +1,16 @@
-<h1>Hangouts#show</h1>
-<p>Find me in app/views/hangouts/show.html.erb</p>
+<h1><%= @hangout.name %></h1>
+<p><%= @hangout.description %></p>
+
+<h3>When?</h3>
+  <% if !@hangout.date_choices.length.nil? %>
+    <p>Which choices work for you? You can pick more than one:</p>
+  <% end %>
+  <div class="date-cards">
+    <% @hangout.date_choices.each do |date| %>
+      <div class="card-date">
+        <h2><%= three_letter_month(date.date) %> <%= date_as_ordinal(date.date) %></h2>
+        <h3><%= three_letter_day(date.date) %> 7:00pm</h3>
+      </div>
+    <% end %>
+  </div>
+<h3>Where?</h3>
