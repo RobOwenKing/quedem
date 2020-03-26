@@ -1,14 +1,6 @@
-<div class="form-container">
-  <%= simple_form_for (@hangout) do |f| %>
-  <div class="form-what form-section">
-    <%= render 'what', f: f %>
-  </div>
-  <div class="form-when form-section">
-    <%= render 'when', f: f %>
-  </div>
-  <div class="form-where form-section">
-  <%= render 'where', f: f %>
-  <%= f.submit "submit" %>
-  </div>
-  <% end %>
-</div>
+<%= simple_form_for (@hangout) do |f| %>
+<%= render 'what', f: f %>
+<%= render 'when', f: f %>
+<%= render 'where', f: f %>
+<%= f.submit "submit" %>
+<% end %>
