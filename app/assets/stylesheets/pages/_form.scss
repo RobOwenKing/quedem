@@ -1,0 +1,57 @@
+.form-container {
+  position: relative;
+  overflow: hidden;
+  height: 90vh;
+}
+
+.form-what {
+  position: absolute;
+  left: 0px;
+  height: 100%;
+}
+.form-section{
+  height: 100%;
+  position: relative;
+}
+.form-when {
+  position: absolute;
+  left: 100vw;
+  height: 100%;
+}
+
+.form-where {
+  position: absolute;
+  left: 200vw;
+  height: 100%;
+
+}
+
+.form-hide {
+  position: absolute;
+  left: 200vw;
+}
+
+.form-show {
+  position: absolute;
+  left: 0px;
+}
+
+#place-choice {
+  width: 100%;
+  height: 55px;
+}
+
+#hangout_name {
+  width: 100%;
+  height: 55px;
+}
+
+.datepicker {
+  width: 100%;
+  height: 55px;
+}
+
+.locations-card-container {
+  overflow: scroll;
+  height: 40vh;
+}

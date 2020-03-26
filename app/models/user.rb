@@ -6,4 +6,5 @@ class User < ApplicationRecord
   has_many :location_votes
   has_many :date_votes
   has_many :attendances
+  has_many :hangouts
 end

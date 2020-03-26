@@ -16,6 +16,10 @@ class HangoutsController < ApplicationController
     @hangout.user = current_user
     if @hangout.save
 
+    params[:date_choices].split(",").each do |dc|
+      DateChoice.create(date: DateTime.new(dc.to_i), hangout_id: @hangout.id)
+    end
+
       redirect_to hangout_path(@hangout)
     else
       render :new
@@ -29,6 +33,6 @@ class HangoutsController < ApplicationController
   end
 
   def hangout_params
-    params.require(:hangout).permit(:name, :description, location_choices_attributes: [:title, :address])
+    params.require(:hangout).permit(:name, :description, :choices, location_choices_attributes: [:title, :address, :rating, :photo])
   end
 end
