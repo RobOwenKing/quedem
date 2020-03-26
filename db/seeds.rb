@@ -9,6 +9,8 @@ require "open-uri"
 
 puts "Lets go!"
 
+LocationVote.destroy_all
+DateVote.destroy_all
 LocationChoice.destroy_all
 DateChoice.destroy_all
 Hangout.destroy_all
