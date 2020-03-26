@@ -1,7 +1,9 @@
 class HangoutsController < ApplicationController
   before_action :set_hangout, only: :show
 
-  def show; end
+  def show
+    # raise
+  end
 
   def new
     @hangout = Hangout.new

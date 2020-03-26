@@ -1,20 +1,27 @@
 // Date component for hangout page
 
+.date-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+}
+
 .card-date {
-  position: absolute;
-  width: 102px;
-  height: 102px;
-  left: 17px;
-  top: 302px;
+  // position: absolute;
+  width: 120px;
+  height: 120px;
+  // left: 17px;
+  // top: 302px;
   border: 2px solid $purple-dark;
 }
 
 .card-date h2 {
-  position: absolute;
-  left: 5%;
-  // right: 50%;
-  top: 20%;
-  bottom: 45%;
+  // position: relative;
+  // // position: absolute;
+  // left: 5%;
+  // // right: 50%;
+  // top: 20%;
+  // bottom: 45%;
 
   font-family: $body-font;
   font-style: normal;
@@ -23,21 +30,26 @@
   line-height: 32px;
   letter-spacing: -1px;
 
+  margin: 12px 8px;
+
   color: #000000;
 }
 
 .card-date h3 {
-  position: absolute;
-  left: 5%;
-  // right: 64.71%;
-  top: 60%;
-  bottom: 20%;
+  // position: relative;
+  // //position: absolute;
+  // left: 5%;
+  // // right: 64.71%;
+  // top: 60%;
+  // bottom: 20%;
 
   font-family: $body-font;
   font-style: normal;
   font-weight: bold;
   font-size: 24px;
   line-height: 16px;
+
+  margin: 12px 8px;
 
   color: #000000;
 }
