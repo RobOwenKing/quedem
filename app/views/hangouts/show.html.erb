@@ -16,8 +16,8 @@
 <h3>Where?</h3>
 
 
-<%= simple_form_for @user do |f| %>
+<%= simple_form_for @hangout do |f| %>
   <%= f.input :name %>
-  <input type="text" name="date_votes">
-  <input type="text" name="location_votes">
+  <input type="text" id="date-votes" name="date_votes">
+  <input type="text" id="location-votes" name="location_votes">
 <% end %>
