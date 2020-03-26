@@ -7,13 +7,15 @@
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
-  margin: 8px 10px 10px 8px;
+  margin: 8px 0px;
 }
 
 .card-location img {
-  height: 100%;
-  width: 120px;
-  object-fit: cover;
+  height: 120px;
+  min-width: 120px;
+  max-width: 120px;
+  background-size: cover;
+  background-position: center center;
 }
 
 .card-location .card-location-infos {
@@ -23,38 +25,31 @@
 }
 
 .card-location h2 {
-  font-size: 24px;
+  font-size: 18px;
   font-weight: bold;
 }
 
 .card-location h3 {
-  font-size: 18px;
-  line-height: 1.4;
+  font-size: 16px;
+  line-height: 1.2;
   opacity: .7;
+  font-weight: lighter;
 }
 
 .rating {
-  margin-top: -5px;
+  margin-top: 15px;
+  margin-bottom: 0px
 }
 
-.card-delete {
+.rating-delete {
+  display: flex;
+  justify-content: space-between;
+}
+
+.delete-location {
+  margin-top: 15px;
 }
 
 
 // Possible HTML for hangout view
-// <div class="card-location">
-//   <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-//     <div class="card-location-infos">
-//       <h2>Location name</h2>
-//       <h3>Location description with <strong>relevant info</strong> only.</h3>
-//       <ul class="review-stars list-inline">
-//         <li class="list-inline-item">⭐️</li>
-//         <li class="list-inline-item">⭐️ </li>
-//         <li class="list-inline-item">⭐️ </li>
-//         <li class="list-inline-item">⭐️ </li>
-//       </ul>
-//       <div class="card-delete">
-//         <%= link_to "Delete", class: "btn btn-danger"  %>
-//       </div>
-//     </div>
-// </div>
+// check app/javascript/plugins/init_autocomplete for sample HTML
