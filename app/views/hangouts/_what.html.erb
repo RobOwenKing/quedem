@@ -3,11 +3,10 @@
   </div>
 
   <div class="title-input-container">
-    <%= f.simple_fields_for :name do |n| %>
+    <%= f.input :name %>
 
     <div class="create-hangout-btn">
       <%= link_to "Next", new_hangout_path, class: "hangout-btn btn-primary" %>
     </div>
 
-    <% end %>
   </div>
