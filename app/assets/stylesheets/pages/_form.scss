@@ -9,10 +9,12 @@
   left: 0px;
   height: 100%;
 }
+
 .form-section{
   height: 100%;
   position: relative;
 }
+
 .form-when {
   position: absolute;
   left: 100vw;
@@ -24,6 +26,12 @@
   left: 200vw;
   height: 100%;
 
+}
+
+.form-close-poll {
+  position: absolute;
+  left: 200vw;
+  height: 100%;
 }
 
 .form-hide {
@@ -39,6 +47,15 @@
 #place-choice {
   width: 100%;
   height: 55px;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 2px;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
 #hangout_name {
@@ -55,3 +72,22 @@
   overflow: scroll;
   height: 40vh;
 }
+
+#hangout_description {
+  margin-top: 75px;
+  height: 150px;
+}
+
+.form-control {
+  height: 55px;
+}
+
+.form-control[readonly] {
+  height: 55px;
+  background-color: #ffffff;
+}
+
+.form-when-text {
+  padding: 0.7rem 0.75rem;
+}
+

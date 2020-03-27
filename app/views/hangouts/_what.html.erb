@@ -3,7 +3,8 @@
 </div>
 
 <div class="title-input-container">
-  <%= f.input :name, label: false, placeholder: "Hangout name goes here" %>
+  <%= f.input :name, label: false, placeholder: "Hangout Title" %>
+  <%= f.input :description, label: false, placeholder: "Notes: (optional)", class: "description-input" %>
 
   <div class="create-hangout-btn">
     <%= link_to "Next", new_hangout_path, class: "hangout-btn btn-primary" %>

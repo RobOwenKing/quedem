@@ -1,7 +1,6 @@
 import flatpickr from "flatpickr"
 import "flatpickr/dist/flatpickr.min.css" // Note this is important!
 
-
 const dateCardContainer = document.querySelector(".date-cards")
 
 const dateDisplayOptions = { month: 'short', day: 'numeric' }
@@ -26,13 +25,17 @@ const buildDateCardHtml = (formattedDate, weekday, time) => {
   </div>`
 }
 
-flatpickr(".datepicker", {
+flatpickr(".multi-datepicker", {
     mode: "multiple",
     dateFormat: "Y-m-d",
     enableTime: true,
     onClose: setNewDate
 })
 
+flatpickr(".datetimepicker", {
+  enableTime: true,
+  dateFormat: "Y-m-d H:i",
+  disableMobile: true
 
-
+})
 
