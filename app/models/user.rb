@@ -7,4 +7,8 @@ class User < ApplicationRecord
   has_many :date_votes
   has_many :attendances
   has_many :hangouts
+
+  def has_voted_for(hangout)
+    date_votes.any?{ |dv| dv.date_choice.hangout == hangout } || location_votes.any?{ |dv| dv.location_choice.hangout == hangout }
+  end
 end
