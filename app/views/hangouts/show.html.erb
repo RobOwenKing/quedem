@@ -3,19 +3,40 @@
 <h1><%= @hangout.name %></h1>
 <p><%= @hangout.description %></p>
 
+<div class="attendance">
+  <div id="going" data-id="going">I'll be there</div>
+  <div id="maybe" data-id="maybe">Not sure yet</div>
+  <div id="no" data-id="no">I can't make it</div>
+</div>
+
 <h3>When?</h3>
   <% if !@hangout.date_choices.length.nil? %>
     <p>Which choices work for you? You can pick more than one:</p>
   <% end %>
   <div class="date-cards">
     <% @hangout.date_choices.each do |date| %>
-      <div class="card-date">
+      <div class="card-date" data-id="<%= date.id %>">
         <h2><%= three_letter_month(date.date) %> <%= date_as_ordinal(date.date) %></h2>
         <h3><%= three_letter_day(date.date) %> 7:00pm</h3>
       </div>
     <% end %>
   </div>
 <h3>Where?</h3>
+<<<<<<< HEAD
+
+
+<%= simple_form_for @user do |f| %>
+  <%= f.input :name %>
+  <input type="text" id="attendance" name="attendance">
+  <input type="text" id="date-votes" name="date_votes">
+  <input type="text" id="location-votes" name="location_votes">
+  <% if current_user.nil? %>
+    <%= f.input :email, :as => :hidden, :input_html => { :value => "noemailgiven@goquedem.com" } %>
+    <%= f.input :password, :as => :hidden, :input_html => { :value => "alsjdbguaw1324bjuka49adsf8" } %>
+  <% end %>
+  <%= f.submit %>
+<% end %>
+
 <% if @hangout.user == current_user %>
   <div class="share-link">
     Link:

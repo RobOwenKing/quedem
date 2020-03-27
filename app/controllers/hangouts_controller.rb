@@ -1,8 +1,9 @@
 class HangoutsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:show]
   before_action :set_hangout, only: :show
 
   def show
-    # raise
+    @user = current_user || User.new
   end
 
   def new
