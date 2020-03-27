@@ -1,15 +1,16 @@
 // Date component for hangout page
 
 .date-cards {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 16px;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .card-date {
   // position: absolute;
   width: 120px;
   height: 120px;
+  margin-right: 12px;
+  margin-bottom: 8px;
   // left: 17px;
   // top: 302px;
   border: 2px solid $purple-dark;
