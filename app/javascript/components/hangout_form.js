@@ -2,6 +2,7 @@ const form = document.getElementById('new_hangout')
 const whatForm = form.querySelector(".form-what");
 const whenForm = form.querySelector(".form-when");
 const whereForm = form.querySelector(".form-where");
+const closeForm = form.querySelector(".form-close-poll");
 
 const initHangoutForm = () => {
   console.log(form);
@@ -12,6 +13,9 @@ const initHangoutForm = () => {
 
     const whereBtn = whenForm.querySelector("a");
     whereBtn.addEventListener('click', jumpToWhere)
+
+    const closeBtn = whereForm.querySelector("a");
+    closeBtn.addEventListener('click', jumpToClose)
 
   }
 }
@@ -30,6 +34,14 @@ const jumpToWhere = (e) => {
   whenForm.classList.add("form-hide");
 
   whereForm.classList.add("form-show");
+}
+
+const jumpToClose = (e) => {
+  e.preventDefault()
+  whereForm.classList.remove("form-show");
+  whereForm.classList.add("form-hide");
+
+  closeForm.classList.add("form-show");
 }
 
 export { initHangoutForm }
