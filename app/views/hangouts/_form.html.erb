@@ -12,7 +12,19 @@
     </div>
     <div class="form-where">
       <div class="form-section">
-        <%= render 'where', f: f %>
+          <%= render 'where', f: f %>
+      </div>
+    </div>
+    <div class="form-close-poll">
+      <div class="form-section">
+        <div class="tag-line">
+          <h2>Choose a closing time for your poll:</h2>
+        </div>
+        <%= f.input :poll_closing_time, as: :string, required: false, placeholder: "Pick a closing time", label: false, input_html: {class: "datetimepicker"} %>
+        <!-- <input type="text" class="datetimepicker" placeholder="Pick a closing time" name="hangout[poll_closing_time]"> -->
+        <div class="create-hangout-btn">
+          <%= f.submit "create", class: "hangout-btn btn-primary" %>
+        </div>
       </div>
     </div>
   <% end %>
