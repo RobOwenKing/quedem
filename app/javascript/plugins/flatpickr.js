@@ -22,7 +22,8 @@ const buildDateCardHtml = (formattedDate, weekday, time) => {
   return `<div class="card-date">
      <h2> ${formattedDate}</h2>
      <h3> ${weekday} ${time} </h3>
-  </div>`
+     <input class="form-control string optional hidden-input" type="text" value="${formattedDate}" name="hangout[date_choices_attributes][]" id="hangout_date_choices_attributes">
+     </div>`
 }
 
 flatpickr(".multi-datepicker", {
