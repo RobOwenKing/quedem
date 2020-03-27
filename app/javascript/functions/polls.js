@@ -38,11 +38,13 @@ const rsvp = [going, maybe, no];
 const rsvpInput = document.getElementById("attendance");
 
 const rsvpListeners = () => {
-  rsvp.forEach(answer => {
-    answer.addEventListener('click', (event) => {
-      rsvpInput.value = answer.dataset.id
+  if (going !== null && maybe !== null && no !== null) {
+    rsvp.forEach(answer => {
+      answer.addEventListener('click', (event) => {
+        rsvpInput.value = answer.dataset.id
+      });
     });
-  });
+  }
 };
 
 export { dateListeners, rsvpListeners };
