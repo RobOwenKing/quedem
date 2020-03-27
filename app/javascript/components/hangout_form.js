@@ -1,7 +1,9 @@
 const form = document.getElementById('new_hangout')
-const whatForm = form.querySelector(".form-what");
-const whenForm = form.querySelector(".form-when");
-const whereForm = form.querySelector(".form-where");
+if (form !== null) {
+  const whatForm = form.querySelector(".form-what");
+  const whenForm = form.querySelector(".form-when");
+  const whereForm = form.querySelector(".form-where");
+}
 
 const initHangoutForm = () => {
   console.log(form);
@@ -12,7 +14,6 @@ const initHangoutForm = () => {
 
     const whereBtn = whenForm.querySelector("a");
     whereBtn.addEventListener('click', jumpToWhere)
-
   }
 }
 
