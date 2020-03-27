@@ -15,7 +15,6 @@ class HangoutsController < ApplicationController
     @hangout = Hangout.new(hangout_params)
     @hangout.user = current_user
     if @hangout.save
-
     params[:hangout][:date_choices_attributes].each do |dc|
       DateChoice.create(date: dc.to_datetime, hangout_id: @hangout.id)
     end
