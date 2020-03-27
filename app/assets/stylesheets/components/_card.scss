@@ -2,6 +2,7 @@
 // Location card for where page.
 
 .card-location {
+  border: 5px solid transparent;
   overflow: hidden;
   height: 120px;
   background: white;
@@ -49,7 +50,9 @@
 .delete-location {
   margin-top: 15px;
 }
-
+.card-location.checked{
+  border: 5px solid $purple-dark;
+}
 
 // Possible HTML for hangout view
 // check app/javascript/plugins/init_autocomplete for sample HTML
