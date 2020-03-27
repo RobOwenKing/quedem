@@ -42,3 +42,29 @@
   background-color: #ffffff;
   color: $purple-dark
 }
+
+.create-hangout-btn {
+  display: flex;
+  height: 55px;
+  margin-top: 24px;
+  text-align: center;
+  align-items: center;
+  position: absolute;
+  bottom: 80px;
+  width: 100%;
+}
+
+.hangout-btn {
+  flex-grow: 1;
+  font-size: 24px;
+}
+
+.create-hangout-btn-home {
+  display: flex;
+  height: 55px;
+  margin-top: 24px;
+  text-align: center;
+  align-items: center;
+  bottom: 80px;
+  width: 100%;
+}
