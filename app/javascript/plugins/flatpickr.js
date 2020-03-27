@@ -13,16 +13,17 @@ const setNewDate = (selectedDates, dateString, instance) => {
   const formattedDate = selectedDates[0].toLocaleDateString("en-US", dateDisplayOptions)
   const weekday = selectedDates[0].toLocaleDateString("en-US", weekDayDisplayOptions)
   const formattedTime = selectedDates[0].toLocaleTimeString("en-US", timeDisplayOptions);
-  const cardHtml = buildDateCardHtml(formattedDate, weekday, formattedTime);
+  const utcValue = selectedDates[0].toUTCString();
+  const cardHtml = buildDateCardHtml(formattedDate, weekday, formattedTime, utcValue);
  dateCardContainer.insertAdjacentHTML('beforeend', cardHtml);
  instance.clear();
 }
 
-const buildDateCardHtml = (formattedDate, weekday, time) => {
+const buildDateCardHtml = (formattedDate, weekday, time, utcValue) => {
   return `<div class="card-date">
      <h2> ${formattedDate}</h2>
      <h3> ${weekday} ${time} </h3>
-     <input class="form-control string optional hidden-input" type="text" value="${formattedDate}" name="hangout[date_choices_attributes][]" id="hangout_date_choices_attributes">
+     <input class="form-control string optional hidden-input" type="text" value="${utcValue}" name="hangout[date_choices_attributes][]" id="hangout_date_choices_attributes">
      </div>`
 }
 
