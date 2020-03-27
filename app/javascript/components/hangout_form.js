@@ -1,9 +1,14 @@
 const form = document.getElementById('new_hangout')
+let whatForm
+let whereForm
+let whenForm
+let closeForm
+
 if (form !== null) {
-  const whatForm = form.querySelector(".form-what");
-  const whenForm = form.querySelector(".form-when");
-  const whereForm = form.querySelector(".form-where");
-  const closeForm = form.querySelector(".form-close-poll");
+  whatForm = form.querySelector(".form-what");
+  whenForm = form.querySelector(".form-when");
+  whereForm = form.querySelector(".form-where");
+  closeForm = form.querySelector(".form-close-poll");
 }
 
 const initHangoutForm = () => {

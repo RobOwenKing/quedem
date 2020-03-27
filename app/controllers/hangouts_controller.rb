@@ -33,6 +33,6 @@ class HangoutsController < ApplicationController
   end
 
   def hangout_params
-    params.require(:hangout).permit(:name, :description, :choices, location_choices_attributes: [:title, :address, :rating, :photo])
+    params.require(:hangout).permit(:name, :description, :choices, :poll_closing_time, location_choices_attributes: [:title, :address, :rating, :photo])
   end
 end
