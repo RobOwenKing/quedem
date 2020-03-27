@@ -76,6 +76,7 @@ const rsvpListeners = () => {
   if (going !== null && maybe !== null && no !== null) {
     rsvp.forEach(answer => {
       answer.addEventListener('click', (event) => {
+        answer.classList.toggle("checked");
         rsvpInput.value = answer.dataset.id
       });
     });
