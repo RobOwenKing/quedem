@@ -23,20 +23,83 @@ const validateWhat = (nextBtn) => {
   })
 }
 
+// const validateWhen = (nextBtn) => {
+//   const input = document.querySelector(".date-cards-container")
+//   nextBtn.classList.add("disabled")
+//   input.addEventListener("change", (e) => {
+//     if(e.target.value.length >= 0) {
+//       nextBtn.classList.add("disabled")
+//     } else {
+//       nextBtn.classList.remove("disabled")
+//     }
+//   })
+// }
+
+// const validateWhere = (nextBtn) => {
+//   const input = document.querySelector(".locations-card-container")
+//   nextBtn.classList.add("disabled")
+//   if(document.querySelector(".date-cards-container").innerHTML.trim().length == 0) {
+//     nextBtn.classList.add("disabled")
+//   } else {
+//     nextBtn.classList.remove("disabled")
+//   }
+// }
+
+const backButtonForm = () => {
+  if (form) {
+    const backToWhat = whenForm.querySelector(".back-btn");
+    backToWhat.addEventListener('click', jumpBackToWhat)
+
+    const backToWhen = whereForm.querySelector(".back-btn");
+    backToWhen.addEventListener('click', jumpBackToWhen)
+
+    const backToWhere = closeForm.querySelector(".back-btn");
+    backToWhere.addEventListener('click', jumpBackToWhere)
+  }
+}
+
 const initHangoutForm = () => {
   console.log(form);
   if (form) {
-    const whenBtn = whatForm.querySelector("a");
+    const whenBtn = whatForm.querySelector(".next-btn");
     whenBtn.addEventListener('click', jumpToWhen)
     validateWhat(whenBtn)
 
-    const whereBtn = whenForm.querySelector("a");
+    const whereBtn = whenForm.querySelector(".next-btn");
     whereBtn.addEventListener('click', jumpToWhere)
+    // validateWhen(whereBtn)
 
-    const closeBtn = whereForm.querySelector("a");
+    const closeBtn = whereForm.querySelector(".next-btn");
     closeBtn.addEventListener('click', jumpToClose)
+    // validateWhere(closeBtn)
   }
 }
+
+const jumpBackToWhat = (e) => {
+  e.preventDefault()
+  whenForm.classList.remove("form-show");
+  whenForm.classList.add("form-hide");
+
+  whatForm.classList.add("form-show");
+}
+
+const jumpBackToWhen = (e) => {
+  e.preventDefault()
+  whereForm.classList.remove("form-show");
+  whereForm.classList.add("form-hide");
+
+  whenForm.classList.add("form-show");
+}
+
+const jumpBackToWhere = (e) => {
+  e.preventDefault()
+  closeForm.classList.remove("form-show");
+  closeForm.classList.add("form-hide");
+
+  whereForm.classList.add("form-show")
+}
+
+
 
 const jumpToWhen = (e) => {
   e.preventDefault()
@@ -62,4 +125,4 @@ const jumpToClose = (e) => {
   closeForm.classList.add("form-show");
 }
 
-export { initHangoutForm }
+export { initHangoutForm, backButtonForm }
