@@ -49,9 +49,9 @@
 
 <%= simple_form_for @user do |f| %>
   <%= f.input :name %>
-  <input type="hidden" id="attendance" name="attendance">
-  <input type="hidden" id="date-votes" name="date_votes">
-  <input type="hidden" id="location-votes" name="location_votes">
+  <input type="text" id="attendance" name="attendance">
+  <input type="text" id="date-votes" name="date_votes">
+  <input type="text" id="location-votes" name="location_votes">
   <%= f.input :hangout_id, as: :hidden, :input_html => { :value => @hangout.id } %>
   <% if current_user.nil? %>
     <%= f.input :email, as: :hidden, :input_html => { :value => "noemail#{User.last.id + 1}@goquedem.com" } %>
