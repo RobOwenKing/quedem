@@ -13,7 +13,7 @@ function copyToClipboard() {
   document.execCommand("copy");
 
   var tooltip = document.getElementById("myTooltip");
-  tooltip.innerHTML = "Copied: " + copyText.value;
+  tooltip.innerHTML = "Copied your link!";
 }
 
 function resetCopyText() {

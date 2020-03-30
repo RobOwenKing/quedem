@@ -50,11 +50,12 @@
 <% if @hangout.user == current_user %>
 
 <div class="share-link">
-  <input type="text" value="Link: <%= request.original_url %>" id="myInput">
+  <label for="myInput">Your Share Link: </label>
+  <input type="text" value="<%= request.original_url %>" id="myInput" readonly>
   <div class="copy-tooltip">
     <button id="copy-button">
       <span class="tooltiptext" id="myTooltip">Copy to clipboard</span>
-     <span>Copy your link!</span>
+     <span><i class="fas fa-clipboard-list"></i></span>
     </button>
   </div>
 </div>
