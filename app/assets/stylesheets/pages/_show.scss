@@ -3,8 +3,11 @@ h3 {
 }
 
 .share-link {
-  border: 1px solid red;
-  margin: 15px;
+  border: 2px solid rgb(96,43,94);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .copy-tooltip {
@@ -43,4 +46,10 @@ h3 {
 .copy-tooltip:hover .tooltiptext {
   visibility: visible;
   opacity: 1;
+}
+
+.fas.fa-clipboard-list {
+  font-size: 25px;
+  font-size: 50px;
+  color: rgb(96,43,94);
 }
