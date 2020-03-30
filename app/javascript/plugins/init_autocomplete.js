@@ -40,14 +40,15 @@ const resetContainers = () => {
 
 const addPlaceCard = (place, container) => {
   const card = `<div class="card-location">
-  <img src=${place.photos[0].getUrl()} />
+  <div class="location-image" style="background-image: url(${place.photos[0].getUrl()})">
+  <div class="dark-overlay">
+  </div>
+  <p class="rating">${place.rating}</p>
+  </div>
   <div class="card-location-infos">
   <h2>${place.name}</h2>
-  <h3>${place.formatted_address}</h3>
-  <div class="rating-delete">
-  <p class="rating">Rating: ${place.rating}</p>
-  <p class="delete-location">delete</p>
-  </div>
+  <h3>${place.vicinity}</h3>
+  <i class="delete-location fas fa-times-circle fa-lg"></i>
   </div>
   </div>`
   container.insertAdjacentHTML('beforeend', card)
@@ -67,6 +68,7 @@ const initAutocomplete = () => {
     const googleAutocomplete = new google.maps.places.Autocomplete(addressInput)
     googleAutocomplete.addListener("place_changed", (e) => {
       const place = googleAutocomplete.getPlace()
+      console.log(place)
       PLACES.push(place)
       resetContainers()
       addressInput.value = ""

@@ -1,5 +1,5 @@
 <% unless current_user&.has_voted_for(@hangout) %>
-  <h1><%= @hangout.name %></h1>
+  <h2><%= @hangout.name %></h2>
   <p><%= @hangout.description %></p>
 
   <div class="attendance">
@@ -8,36 +8,44 @@
     <div id="no" data-id="no">I can't make it</div>
   </div>
 
-  <h3>When?</h3>
+  <h3 class="show-page-header">When?</h3>
     <% if !@hangout.date_choices.length.nil? %>
       <p>Which choices work for you? You can pick more than one:</p>
     <% end %>
-    <div class="date-cards">
+    <div class="date-cards date-cards-container-show">
       <% @hangout.date_choices.each do |date| %>
         <div class="card-date" data-id="<%= date.id %>">
-          <h2><%= three_letter_month(date.date) %> <%= date_as_ordinal(date.date) %></h2>
-          <h3><%= three_letter_day(date.date) %> <%= date.date.strftime("%I:%M %p") %></h3>
+          <h2><%= three_letter_month(date.date) + " " + date.date.strftime("%d") %> </h2>
+          <h3>
+            <%= date.date.strftime("%A") %>
+          </h3>
+          <h4>
+            <%= date.date.strftime("%I:%M %p") %>
+          </h4>
         </div>
       <% end %>
     </div>
 
-  <h3>Where?</h3>
+  <h3 class="show-page-header">Where?</h3>
     <% if !@hangout.location_choices.length.nil? %>
       <p>Which choices work for you? You can pick more than one:</p>
     <% end %>
-    <div>
-      <% @hangout.location_choices.each do |location| %>
-        <div class="card-location" data-id="<%= location.id %>">
-          <img src=<%= location.photo %> />
-          <div class="card-location-infos">
-          <h2><%= location.title %></h2>
-          <h3><%= location.address %></h3>
-            <div class="rating-delete">
-              <p class="rating">Rating: <%= location.rating %></p>
+    <div class="locations-card-container-show">
+      <div>
+        <% @hangout.location_choices.each do |location| %>
+          <div class="card-location" data-id="<%= location.id %>">
+            <div class="location-image" style="background-image: url(<%= location.photo %>)">
+              <div class="dark-overlay">
+              </div>
+              <p class="rating"><%= location.rating %></p>
+            </div>
+            <div class="card-location-infos">
+              <h2><%= location.title %></h2>
+              <h3><%= location.address %></h3>
             </div>
           </div>
-        </div>
-      <% end %>
+        <% end %>
+      </div>
     </div>
 
   <%= simple_form_for @user do |f| %>
