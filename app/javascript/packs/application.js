@@ -10,3 +10,7 @@ import {initHangoutForm, backButtonForm} from "../components/hangout_form";
 import "../plugins/flatpickr";
 initHangoutForm();
 backButtonForm();
+
+import {initLinkCopy} from "../components/copy_clipboard";
+initLinkCopy();
+
