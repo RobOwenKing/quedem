@@ -23,27 +23,34 @@ const validateWhat = (nextBtn) => {
   })
 }
 
-// const validateWhen = (nextBtn) => {
-//   const input = document.querySelector(".date-cards-container")
-//   nextBtn.classList.add("disabled")
-//   input.addEventListener("change", (e) => {
-//     if(e.target.value.length >= 0) {
-//       nextBtn.classList.add("disabled")
-//     } else {
-//       nextBtn.classList.remove("disabled")
-//     }
-//   })
-// }
+const validateWhen = (nextBtn) => {
+  const container = document.querySelector(".date-cards-container")
+  nextBtn.classList.add("disabled")
+  container.addEventListener("DOMSubtreeModified", (e) => {
 
-// const validateWhere = (nextBtn) => {
-//   const input = document.querySelector(".locations-card-container")
-//   nextBtn.classList.add("disabled")
-//   if(document.querySelector(".date-cards-container").innerHTML.trim().length == 0) {
-//     nextBtn.classList.add("disabled")
-//   } else {
-//     nextBtn.classList.remove("disabled")
-//   }
-// }
+    const cards = container.querySelectorAll(".card-date")
+    if(cards.length <= 0) {
+      nextBtn.classList.add("disabled")
+    } else {
+      nextBtn.classList.remove("disabled")
+    }
+  })
+}
+
+const validateWhere = (nextBtn) => {
+  const container = document.querySelector(".locations-card-container")
+  nextBtn.classList.add("disabled")
+  container.addEventListener("DOMSubtreeModified", (e) => {
+
+    const cards = container.querySelectorAll(".card-location")
+    if(cards.length <= 0) {
+      nextBtn.classList.add("disabled")
+    } else {
+      nextBtn.classList.remove("disabled")
+    }
+  })
+
+}
 
 const backButtonForm = () => {
   if (form) {
@@ -67,11 +74,11 @@ const initHangoutForm = () => {
 
     const whereBtn = whenForm.querySelector(".next-btn");
     whereBtn.addEventListener('click', jumpToWhere)
-    // validateWhen(whereBtn)
+    validateWhen(whereBtn)
 
     const closeBtn = whereForm.querySelector(".next-btn");
     closeBtn.addEventListener('click', jumpToClose)
-    // validateWhere(closeBtn)
+    validateWhere(closeBtn)
   }
 }
 
