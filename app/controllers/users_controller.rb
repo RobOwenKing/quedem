@@ -17,6 +17,8 @@ class UsersController < ApplicationController
 
     rsvp = params[:attendance]
     Attendance.create(user: user, hangout_id: params[:hangout_id], response: rsvp )
+
+    flash.notice("Your votes have been saved")
   end
 
   def update
@@ -34,6 +36,6 @@ class UsersController < ApplicationController
 
     rsvp = params[:attendance]
     Attendance.create(user: user, hangout_id: params[:user][:hangout_id], response: rsvp )
-    redirect_to hangout_path(params[:user][:hangout_id])
+    redirect_to hangout_path(params[:user][:hangout_id]), notice: "Your votes have been saved"
   end
 end
