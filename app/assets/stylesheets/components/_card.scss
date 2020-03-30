@@ -2,26 +2,29 @@
 // Location card for where page.
 
 .card-location {
-  overflow: hidden;
+  border: 5px solid transparent;
   height: 120px;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0 0 3px rgba(0,0,0,0.2);
   display: flex;
   margin: 8px 0px;
 }
 
-.card-location img {
-  height: 120px;
-  min-width: 120px;
-  max-width: 120px;
+.card-location .location-image {
+  height: 110px;
+  min-width: 110px;
+  max-width: 110px;
   background-size: cover;
   background-position: center center;
+  position: relative;
 }
 
 .card-location .card-location-infos {
   padding: 8px;
   flex-direction: column;
   height: 120px;
+  width: 100%;
+  position: relative;
 }
 
 .card-location h2 {
@@ -31,14 +34,25 @@
 
 .card-location h3 {
   font-size: 16px;
-  line-height: 1.2;
+  line-height: 1;
   opacity: .7;
   font-weight: lighter;
+  margin-top: 0px;
+}
+
+.dark-overlay {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4)
 }
 
 .rating {
-  margin-top: 15px;
-  margin-bottom: 0px
+  margin-top: 0px;
+  margin-bottom: 0px;
+  position: absolute;
+  bottom: 5px;
+  right: 15px;
+  color: white;
 }
 
 .rating-delete {
@@ -47,9 +61,14 @@
 }
 
 .delete-location {
-  margin-top: 15px;
+  position: absolute;
+  top: -5px;
+  right: -5px;
 }
 
+.card-location.checked{
+  border: 5px solid $purple-dark;
+}
 
 // Possible HTML for hangout view
 // check app/javascript/plugins/init_autocomplete for sample HTML

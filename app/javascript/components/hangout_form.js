@@ -11,12 +11,24 @@ if (form !== null) {
   closeForm = form.querySelector(".form-close-poll");
 }
 
+const validateWhat = (nextBtn) => {
+  const input = document.querySelector("#hangout_name")
+  nextBtn.classList.add("disabled")
+  input.addEventListener("keydown", (e) => {
+    if (e.target.value.length >= 3){
+      nextBtn.classList.remove("disabled")
+    } else {
+      nextBtn.classList.add("disabled")
+    }
+  })
+}
+
 const initHangoutForm = () => {
   console.log(form);
   if (form) {
-
     const whenBtn = whatForm.querySelector("a");
     whenBtn.addEventListener('click', jumpToWhen)
+    validateWhat(whenBtn)
 
     const whereBtn = whenForm.querySelector("a");
     whereBtn.addEventListener('click', jumpToWhere)

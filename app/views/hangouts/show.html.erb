@@ -1,62 +1,80 @@
-<h1><%= @hangout.name %></h1>
-<p><%= @hangout.description %></p>
+<% unless current_user&.has_voted_for(@hangout) %>
+  <h2><%= @hangout.name %></h2>
+  <p><%= @hangout.description %></p>
 
-<div class="attendance">
-  <div id="going" data-id="going">I'll be there</div>
-  <div id="maybe" data-id="maybe">Not sure yet</div>
-  <div id="no" data-id="no">I can't make it</div>
-</div>
-
-<h3>When?</h3>
-<% if !@hangout.date_choices.length.nil? %>
-<p>Which choices work for you? You can pick more than one:</p>
-<% end %>
-<div class="date-cards">
-  <% @hangout.date_choices.each do |date| %>
-  <div class="card-date" data-id="<%= date.id %>">
-    <h2><%= three_letter_month(date.date) %> <%= date_as_ordinal(date.date) %></h2>
-    <h3><%= three_letter_day(date.date) %> 7:00pm</h3>
+  <div class="attendance">
+    <div id="going" data-id="going">I'll be there</div>
+    <div id="maybe" data-id="maybe">Not sure yet</div>
+    <div id="no" data-id="no">I can't make it</div>
   </div>
+
+  <h3 class="show-page-header">When?</h3>
+    <% if !@hangout.date_choices.length.nil? %>
+      <p>Which choices work for you? You can pick more than one:</p>
+    <% end %>
+    <div class="date-cards date-cards-container-show">
+      <% @hangout.date_choices.each do |date| %>
+        <div class="card-date" data-id="<%= date.id %>">
+          <h2><%= three_letter_month(date.date) + " " + date.date.strftime("%d") %> </h2>
+          <h3>
+            <%= date.date.strftime("%A") %>
+          </h3>
+          <h4>
+            <%= date.date.strftime("%I:%M %p") %>
+          </h4>
+        </div>
+      <% end %>
+    </div>
+
+  <h3 class="show-page-header">Where?</h3>
+    <% if !@hangout.location_choices.length.nil? %>
+      <p>Which choices work for you? You can pick more than one:</p>
+    <% end %>
+    <div class="locations-card-container-show">
+      <div>
+        <% @hangout.location_choices.each do |location| %>
+          <div class="card-location" data-id="<%= location.id %>">
+            <div class="location-image" style="background-image: url(<%= location.photo %>)">
+              <div class="dark-overlay">
+              </div>
+              <p class="rating"><%= location.rating %></p>
+            </div>
+            <div class="card-location-infos">
+              <h2><%= location.title %></h2>
+              <h3><%= location.address %></h3>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+  <%= simple_form_for @user do |f| %>
+    <%= f.input :name %>
+    <input type="hidden" id="attendance" name="attendance">
+    <input type="hidden" id="date-votes" name="date_votes">
+    <input type="hidden" id="location-votes" name="location_votes">
+    <%= f.input :hangout_id, as: :hidden, :input_html => { :value => @hangout.id } %>
+    <% if current_user.nil? %>
+      <%= f.input :email, as: :hidden, :input_html => { :value => "noemail#{User.last.id + 1}@goquedem.com" } %>
+      <%= f.input :password, as: :hidden, :input_html => { :value => "alsjdbguaw1324bjuka49adsf8" } %>
+    <% end %>
+
+      <%= f.submit "Vote", class: "hangout-btn btn-primary" %>
+
   <% end %>
-</div>
 
-<h3>Where?</h3>
-<% if !@hangout.location_choices.length.nil? %>
-<p>Which choices work for you? You can pick more than one:</p>
-<% end %>
-<div class="locations-card-container">
-  <% @hangout.location_choices.each do |location| %>
-  <div class="card-location" data-id="<%= location.id %>">
-    <!-- TO DO! -->
-    <!-- TO DO! -->
-    <!-- TO DO! -->
-  </div>
+  <% if @hangout.user == current_user %>
+    <div class="share-link">
+       <label for="myInput">Your Share Link: </label>
+        <input type="text" value="<%= request.original_url %>" id="myInput" readonly>
+        <div class="copy-tooltip">
+          <button id="copy-button">
+            <span class="tooltiptext" id="myTooltip">Copy to clipboard</span>
+            <span><i class="fas fa-clipboard-list"></i></span>
+          </button>
+        </div>
+    </div>
   <% end %>
-</div>
-
-<%= simple_form_for @user do |f| %>
-<%= f.input :name %>
-<input type="text" id="attendance" name="attendance">
-<input type="text" id="date-votes" name="date_votes">
-<input type="text" id="location-votes" name="location_votes">
-<%= f.input :hangout_id, as: :hidden, :input_html => { :value => @hangout.id } %>
-<% if current_user.nil? %>
-<%= f.input :email, as: :hidden, :input_html => { :value => "noemail#{User.last.id + 1}@goquedem.com" } %>
-<%= f.input :password, as: :hidden, :input_html => { :value => "alsjdbguaw1324bjuka49adsf8" } %>
-<% end %>
-<%= f.submit %>
-<% end %>
-
-<% if @hangout.user == current_user %>
-
-<div class="share-link">
-  <label for="myInput">Your Share Link: </label>
-  <input type="text" value="<%= request.original_url %>" id="myInput" readonly>
-  <div class="copy-tooltip">
-    <button id="copy-button">
-      <span class="tooltiptext" id="myTooltip">Copy to clipboard</span>
-     <span><i class="fas fa-clipboard-list"></i></span>
-    </button>
-  </div>
-</div>
+<% else %>
+  You have succesfully voted
 <% end %>

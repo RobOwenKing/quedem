@@ -1,5 +1,39 @@
+// h3 {
+//   margin-top: 16px;
+// }
+
+h2 {
+  font-family: $body-font;
+  font-weight: bold;
+}
+
 h3 {
+  font-family: $body-font;
+  font-weight: bold;
+}
+
+h4 {
+  font-family: $body-font;
+  font-weight: bold;
+}
+
+p {
+  font-size: 18px;
+}
+
+.show-page-header {
+  margin-top: 24px;
+}
+
+.date-cards-container-show {
   margin-top: 16px;
+  overflow: scroll;
+  height: 20vh;
+}
+
+.locations-card-container-show {
+  overflow: scroll;
+  height: 45vh;
 }
 
 .share-link {

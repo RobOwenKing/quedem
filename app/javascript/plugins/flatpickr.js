@@ -6,7 +6,7 @@ require("flatpickr/dist/themes/airbnb.css");
 const dateCardContainer = document.querySelector(".date-cards")
 
 const dateDisplayOptions = { month: 'short', day: 'numeric' }
-const weekDayDisplayOptions = { weekday: 'short' }
+const weekDayDisplayOptions = { weekday: 'long' }
 const timeDisplayOptions = { hour: '2-digit', minute: '2-digit' }
 
 const setNewDate = (selectedDates, dateString, instance) => {
@@ -23,8 +23,11 @@ const setNewDate = (selectedDates, dateString, instance) => {
 
 const buildDateCardHtml = (formattedDate, weekday, time, utcValue) => {
   return `<div class="card-date">
+     <div class="date-inputs">
      <h2> ${formattedDate}</h2>
-     <h3> ${weekday} ${time} </h3>
+     <h3> ${weekday}</h3>
+     <h4> ${time}</h4>
+     </div>
      <input class="form-control string optional hidden-input" type="text" value="${utcValue}" name="hangout[date_choices_attributes][]" id="hangout_date_choices_attributes">
      </div>`
 }

@@ -83,4 +83,4 @@ const rsvpListeners = () => {
   }
 };
 
-export { dateListeners, rsvpListeners };
+export { dateListeners, locationListeners, rsvpListeners };

@@ -58,7 +58,10 @@
   flex-grow: 1;
   font-size: 24px;
 }
-
+.hangout-btn.disabled{
+  background: grey;
+  pointer-events: none;
+}
 .create-hangout-btn-home {
   display: flex;
   height: 55px;
