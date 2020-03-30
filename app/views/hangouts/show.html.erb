@@ -8,48 +8,54 @@
 </div>
 
 <h3>When?</h3>
-  <% if !@hangout.date_choices.length.nil? %>
-    <p>Which choices work for you? You can pick more than one:</p>
-  <% end %>
-  <div class="date-cards">
-    <% @hangout.date_choices.each do |date| %>
-      <div class="card-date" data-id="<%= date.id %>">
-        <h2><%= three_letter_month(date.date) %> <%= date_as_ordinal(date.date) %></h2>
-        <h3><%= three_letter_day(date.date) %> 7:00pm</h3>
-      </div>
-    <% end %>
+<% if !@hangout.date_choices.length.nil? %>
+<p>Which choices work for you? You can pick more than one:</p>
+<% end %>
+<div class="date-cards">
+  <% @hangout.date_choices.each do |date| %>
+  <div class="card-date" data-id="<%= date.id %>">
+    <h2><%= three_letter_month(date.date) %> <%= date_as_ordinal(date.date) %></h2>
+    <h3><%= three_letter_day(date.date) %> 7:00pm</h3>
   </div>
+  <% end %>
+</div>
 
 <h3>Where?</h3>
-  <% if !@hangout.location_choices.length.nil? %>
-    <p>Which choices work for you? You can pick more than one:</p>
-  <% end %>
-  <div class="locations-card-container">
-    <% @hangout.location_choices.each do |location| %>
-      <div class="card-location" data-id="<%= location.id %>">
-        <!-- TO DO! -->
-        <!-- TO DO! -->
-        <!-- TO DO! -->
-      </div>
-    <% end %>
+<% if !@hangout.location_choices.length.nil? %>
+<p>Which choices work for you? You can pick more than one:</p>
+<% end %>
+<div class="locations-card-container">
+  <% @hangout.location_choices.each do |location| %>
+  <div class="card-location" data-id="<%= location.id %>">
+    <!-- TO DO! -->
+    <!-- TO DO! -->
+    <!-- TO DO! -->
   </div>
+  <% end %>
+</div>
 
 <%= simple_form_for @user do |f| %>
-  <%= f.input :name %>
-  <input type="text" id="attendance" name="attendance">
-  <input type="text" id="date-votes" name="date_votes">
-  <input type="text" id="location-votes" name="location_votes">
-  <%= f.input :hangout_id, as: :hidden, :input_html => { :value => @hangout.id } %>
-  <% if current_user.nil? %>
-    <%= f.input :email, as: :hidden, :input_html => { :value => "noemail#{User.last.id + 1}@goquedem.com" } %>
-    <%= f.input :password, as: :hidden, :input_html => { :value => "alsjdbguaw1324bjuka49adsf8" } %>
-  <% end %>
-  <%= f.submit %>
+<%= f.input :name %>
+<input type="text" id="attendance" name="attendance">
+<input type="text" id="date-votes" name="date_votes">
+<input type="text" id="location-votes" name="location_votes">
+<%= f.input :hangout_id, as: :hidden, :input_html => { :value => @hangout.id } %>
+<% if current_user.nil? %>
+<%= f.input :email, as: :hidden, :input_html => { :value => "noemail#{User.last.id + 1}@goquedem.com" } %>
+<%= f.input :password, as: :hidden, :input_html => { :value => "alsjdbguaw1324bjuka49adsf8" } %>
+<% end %>
+<%= f.submit %>
 <% end %>
 
 <% if @hangout.user == current_user %>
-  <div class="share-link">
-    Link:
-    <%= request.original_url %>
+
+<div class="share-link">
+  <input type="text" value="Link: <%= request.original_url %>" id="myInput">
+  <div class="copy-tooltip">
+    <button id="copy-button">
+      <span class="tooltiptext" id="myTooltip">Copy to clipboard</span>
+     <span>Copy your link!</span>
+    </button>
   </div>
+</div>
 <% end %>

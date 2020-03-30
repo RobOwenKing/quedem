@@ -9,3 +9,6 @@ rsvpListeners();
 import {initHangoutForm} from "../components/hangout_form";
 import "../plugins/flatpickr";
 initHangoutForm();
+
+import {initLinkCopy} from "../components/copy_clipboard";
+initLinkCopy();
