@@ -59,9 +59,9 @@
   font-size: 24px;
 }
 .hangout-btn.disabled{
-  background: $grey;
+  background: gray;
   pointer-events: none;
-  border-color: $grey;
+  border-color: gray;
 }
 .create-hangout-btn-home {
   display: flex;
