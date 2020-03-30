@@ -32,13 +32,14 @@
 
 .card-location h3 {
   font-size: 16px;
-  line-height: 1.2;
+  line-height: 1;
   opacity: .7;
   font-weight: lighter;
+  margin-top: 0px;
 }
 
 .rating {
-  margin-top: 15px;
+  margin-top: 0px;
   margin-bottom: 0px
 }
 
@@ -48,8 +49,9 @@
 }
 
 .delete-location {
-  margin-top: 15px;
+  margin-top: 0px;
 }
+
 .card-location.checked{
   border: 5px solid $purple-dark;
 }

@@ -1,5 +1,5 @@
 <% unless current_user&.has_voted_for(@hangout) %>
-  <h1><%= @hangout.name %></h1>
+  <h2><%= @hangout.name %></h2>
   <p><%= @hangout.description %></p>
 
   <div class="attendance">
