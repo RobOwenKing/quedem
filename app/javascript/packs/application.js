@@ -6,6 +6,7 @@ import { dateListeners, locationListeners, rsvpListeners } from "../functions/po
 dateListeners();
 rsvpListeners();
 locationListeners();
-import {initHangoutForm} from "../components/hangout_form";
+import {initHangoutForm, backButtonForm} from "../components/hangout_form";
 import "../plugins/flatpickr";
 initHangoutForm();
+backButtonForm();

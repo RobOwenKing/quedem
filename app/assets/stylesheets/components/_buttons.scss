@@ -10,6 +10,8 @@
 .btn-primary:hover {
   background: linear-gradient($purple, $purple-dark);
   color: white;
+  border: 1px solid $purple;
+  text-decoration: none;
 }
 
 .btn-secondary {
@@ -54,9 +56,28 @@
   width: 100%;
 }
 
-.hangout-btn {
+.back-btn {
+  color: white;
+  font-size: 18px;
+  padding: 12px 10px;
+  font-weight: bold;
+  background: gray;
+  transition: background 0.3s ease;
+  border: 1px solid gray;
   flex-grow: 1;
+  height: 55px;
+}
+
+.back-btn:hover {
+  opacity: 1;
+  text-decoration: none;
+  color: white;
+}
+
+.hangout-btn {
+  flex-grow: 6;
   font-size: 24px;
+  height: 55px;
 }
 .hangout-btn.disabled{
   background: gray;
