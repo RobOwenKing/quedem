@@ -23,6 +23,7 @@
         <%= f.input :poll_closing_time, as: :string, required: false, placeholder: "Pick a closing time", label: false, input_html: {class: "datetimepicker"} %>
         <!-- <input type="text" class="datetimepicker" placeholder="Pick a closing time" name="hangout[poll_closing_time]"> -->
         <div class="create-hangout-btn">
+          <a href="#" class="back-btn">Back</a>
           <%= f.submit "create", class: "hangout-btn btn-primary" %>
         </div>
       </div>
