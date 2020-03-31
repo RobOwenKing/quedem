@@ -1,10 +1,18 @@
 <h2><%= @hangout.name %></h2>
 <p><%= @hangout.description %></p>
 
+<h3 class="show-page-header">Who?</h3>
+
 <div class="attendance">
   <div id="going" data-id="going" class="cursor-pointer <%= 'checked' if current_user&.is_going?(@hangout) %>">I'll be there</div>
   <div id="maybe" data-id="maybe" class="cursor-pointer <%= 'checked' if current_user&.is_maybe?(@hangout) %>">Not sure yet</div>
   <div id="no" data-id="no" class="cursor-pointer <%= 'checked' if current_user&.is_no?(@hangout) %>">I can't make it</div>
+</div>
+
+<div class="who-lists">
+  <p>Going: <%= going_list(@hangout) %></p>
+  <p>Not sure: <%= maybe_list(@hangout) %></p>
+  <p>Can't make it: <%= no_list(@hangout) %></p>
 </div>
 
 <h3 class="show-page-header">When?</h3>
@@ -13,14 +21,19 @@
 <% end %>
 <div class="date-cards date-cards-container-show">
   <% @hangout.date_choices.each do |date| %>
-  <div class="card-date cursor-pointer <%= 'checked' if current_user&.voted_for_date?(date) %>" data-id="<%= date.id %>">
-    <h2><%= three_letter_month(date.date) + " " + date.date.strftime("%d") %> </h2>
-    <h3>
-      <%= date.date.strftime("%A") %>
-    </h3>
-    <h4>
-      <%= date.date.strftime("%I:%M %p") %>
-    </h4>
+  <div class="date-card-container">
+    <div class="card-date cursor-pointer <%= 'checked' if current_user&.voted_for_date?(date) %>" data-id="<%= date.id %>">
+      <h2><%= three_letter_month(date.date) + " " + date.date.strftime("%d") %> </h2>
+      <h3>
+        <%= date.date.strftime("%A") %>
+      </h3>
+      <h4>
+        <%= date.date.strftime("%I:%M %p") %>
+      </h4>
+    </div>
+    <div class="date-votes">
+      <%= date.date_votes.length.to_s %> votes
+    </div>
   </div>
   <% end %>
 </div>

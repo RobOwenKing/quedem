@@ -77,7 +77,7 @@
 
 .locations-card-container {
   overflow: scroll;
-  height: 40vh;
+  // height: 40vh;
 }
 
 #hangout_description {
@@ -96,5 +96,10 @@
 
 .form-when-text {
   padding: 0.7rem 0.75rem;
+}
+
+.closeTimeContainer {
+  display: flex;
+  justify-content: center;
 }
 
