@@ -5,18 +5,22 @@
   flex-wrap: wrap;
 }
 
+.date-card-container {
+  margin-right: 6px;
+  margin-left: 6px;
+  margin-bottom: 8px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
 .card-date {
   // position: absolute;
   width: 103px;
   height: 120px;
-  margin-right: 6px;
-  margin-left: 6px;
-  margin-bottom: 8px;
+  // margin-bottom: 8px;
   // left: 17px;
   // top: 302px;
   border: 2px solid $purple-dark;
   color: #000000;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
   text-align: center;
 }
 
@@ -77,7 +81,12 @@
   margin: 12px 8px;
 }
 
-
+.date-votes {
+  border-color: $purple-dark;
+  border-style: solid;
+  border-width: 0px 2px 2px 2px;
+  text-align: center;
+}
 
 // Possible HTML
 
