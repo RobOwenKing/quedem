@@ -19,10 +19,10 @@
 <% if !@hangout.date_choices.length.nil? %>
   <p>Which choices work for you? You can pick more than one:</p>
 <% end %>
-<div class="date-cards date-cards-container-show">
+<div class="date-cards">
   <% @hangout.date_choices.each do |date| %>
   <div class="date-card-container">
-    <div class="card-date cursor-pointer <%= 'checked' if current_user&.voted_for_date?(date) %>" data-id="<%= date.id %>">
+    <div class="card-date-show-page cursor-pointer <%= 'checked' if current_user&.voted_for_date?(date) %>" data-id="<%= date.id %>">
       <h2><%= three_letter_month(date.date) + " " + date.date.strftime("%d") %> </h2>
       <h3>
         <%= date.date.strftime("%A") %>
