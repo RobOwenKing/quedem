@@ -77,7 +77,7 @@
       </div>
     </div>
     <div class="text-center">
-      <span><%= social_share_button_tag(@hangout.name) %></span>
+      <span><%= social_share_button_tag(@hangout.name, url: hangout_url(@hangout), desc: @hangout.name) %></span>
     </div>
   </div>
 <% end %>
