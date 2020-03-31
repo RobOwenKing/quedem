@@ -1,4 +1,4 @@
-<ul class="dashboard-tabs nav nav-pills mb-3" id="pills-tab" role="tablist">
+<ul class="dashboard-tabs-ul nav nav-pills mb-3" id="pills-tab" role="tablist">
   <li class="tab-active dash-tab nav-item">
     <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Your Hangouts</a>
   </li>
@@ -18,9 +18,7 @@
             <h2><%= hangout.name %></h2>
             <h3><strong>At:</strong> <%= hangout.location&.title %></h3>
             <h3><strong>On:</strong> <%= hangout.date&.date.strftime("%A %b %d at: %I:%M %p") %> </h3>
-            <!-- fix this path -->
             <h3><%= link_to "details", hangout_path(hangout) %></h3>
-            <!-- fix this path -->
           </div>
         </div>
         <% end %>
@@ -38,9 +36,7 @@
             <h2><%= hangout.name %></h2>
             <h3><strong>At:</strong> <%= hangout.location&.title %></h3>
             <h3><strong>On:</strong> <%= hangout.date&.date %> </h3>
-            <!-- fix this path -->
             <h3><%= link_to "details", hangout_path(hangout) %></h3>
-            <!-- fix this path -->
           </div>
         </div>
         <% end %>
