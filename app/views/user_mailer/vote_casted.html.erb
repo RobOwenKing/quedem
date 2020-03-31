@@ -1,0 +1,10 @@
+<h1><%= @voter.name %> Just casted a vote for <%= @hangout.name %></h1>
+
+<h2>Most voted location: <%= @hangout.location.title  %></h2>
+
+<h2>Most voted date: <%= @hangout.date.date  %></h2>
+
+<h2>Attendances:</h2>
+<p>Going: <%= going_list(@hangout) %></p>
+<p>Not sure: <%= maybe_list(@hangout) %></p>
+<p>Can't make it: <%= no_list(@hangout) %></p>
