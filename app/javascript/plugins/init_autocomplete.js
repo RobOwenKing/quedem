@@ -39,17 +39,23 @@ const resetContainers = () => {
 }
 
 const addPlaceCard = (place, container) => {
-  const card = `<div class="card-location">
+  let card = `<div class="card-location">
   <div class="location-image" style="background-image: url(${place.photos[0].getUrl()})">
-  <div class="dark-overlay">
-  </div>
-  <p class="rating">${place.rating}</p>
-  </div>
-  <div class="card-location-infos">
-  <h2>${place.name}</h2>
-  <h3>${place.vicinity}</h3>
-  <i class="delete-location fas fa-times-circle fa-lg"></i>
-  </div>
+    </div>
+      <div class="card-location-infos">
+        <h2>${place.name}</h2>
+        <h3>${place.vicinity}</h3>
+        <i class="delete-location fas fa-times-circle fa-lg"></i>
+        <ul class="star-list list-inline">`
+
+        const stars = Math.round(`${place.rating}`);
+        console.log(stars);
+        for(let i = 0; i < stars; i++ ){
+          card += `<li class="list-inline-item"><i class="rating-stars fas fa-star"></i></li>`
+        }
+
+        card += `</ul
+      </div>
   </div>`
   container.insertAdjacentHTML('beforeend', card)
   const deleteButtons = document.querySelectorAll(".delete-location")
