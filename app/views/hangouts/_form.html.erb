@@ -20,8 +20,14 @@
         <div class="tag-line">
           <h2>Choose a closing time for your poll:</h2>
         </div>
-        <%= f.input :poll_closing_time, as: :string, required: false, placeholder: "Pick a closing time", label: false, input_html: {class: "datetimepicker"} %>
-        <!-- <input type="text" class="datetimepicker" placeholder="Pick a closing time" name="hangout[poll_closing_time]"> -->
+        <div class="poll-form-group">
+          <div class="poll-form">
+            <%= f.input :poll_closing_time, as: :string, required: false, placeholder: "Pick a closing time", label: false, input_html: {class: "datetimepicker"} %>
+          </div>
+          <div class="date-form-button">
+            <a href='#' class='btn-primary date-select'>Select Date</a>
+          </div>
+        </div>
         <div class="closeTimeContainer"></div>
         <div class="create-hangout-btn">
           <a href="#" class="back-btn">Back</a>

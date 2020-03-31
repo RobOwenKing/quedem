@@ -108,6 +108,17 @@
   padding: 18px 32px;
 }
 
+.poll-form-group {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.poll-form {
+  height: 55px;
+}
+
 .closeTimeContainer {
   display: flex;
   justify-content: center;
