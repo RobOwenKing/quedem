@@ -1,6 +1,8 @@
 <h2><%= @hangout.name %></h2>
 <p><%= @hangout.description %></p>
 
+<h3 class="show-page-header">Who?</h3>
+
 <div class="attendance">
   <div id="going" data-id="going" class="cursor-pointer <%= 'checked' if current_user&.is_going?(@hangout) %>">I'll be there</div>
   <div id="maybe" data-id="maybe" class="cursor-pointer <%= 'checked' if current_user&.is_maybe?(@hangout) %>">Not sure yet</div>
