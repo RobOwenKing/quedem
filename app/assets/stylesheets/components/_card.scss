@@ -55,6 +55,15 @@
   color: white;
 }
 
+.star-list {
+  position: absolute;
+  bottom: -10px;
+}
+
+.rating-stars {
+  color: #F6AE0F;
+}
+
 .rating-delete {
   display: flex;
   justify-content: space-between;
