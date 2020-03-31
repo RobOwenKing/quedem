@@ -1,7 +1,3 @@
-// h3 {
-//   margin-top: 16px;
-// }
-
 h2 {
   font-family: $body-font;
   font-weight: bold;
@@ -100,4 +96,40 @@ p {
   // top: -100vh;
 }
 
+.locations-card-container-dashboard {
+  overflow: scroll;
+  height: 62vh;
+}
+
+.dashboard-tabs {
+  display: flex;
+  margin-top: 32px;
+}
+
+.dash-tab {
+  flex-grow: 1;
+  width: 50%
+}
+
+.tab {
+  color: $purple-dark;
+  border: 1px solid $purple-dark;
+  text-align: center;
+}
+
+.tab-active {
+  color: white;
+  text-align: center;
+  border: 1px solid $purple-dark;
+}
+
+.nav-item > a {
+  color: $purple-dark;
+  font-size: 18px;
+}
+
+.nav-pills .nav-link.active {
+  background-color: $purple-dark;
+  border-radius: 0px;
+}
 

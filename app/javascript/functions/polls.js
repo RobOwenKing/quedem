@@ -42,7 +42,7 @@ const dateListeners = () => {
 
 
 // Each date choice card
-const locationChoices = document.querySelectorAll(".card-location");
+const locationChoices = document.querySelectorAll(".js-card-location");
 // The hidden input field to record the user's choices
 const locationInput = document.getElementById("location-votes");
 

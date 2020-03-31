@@ -32,7 +32,7 @@
 <div class="locations-card-container-show">
   <div>
     <% @hangout.location_choices.each do |location| %>
-    <div class="card-location cursor-pointer <%= 'checked' if current_user&.voted_for_location?(location) %>" data-id="<%= location.id %>">
+    <div class="js-card-location card-location cursor-pointer <%= 'checked' if current_user&.voted_for_location?(location) %>" data-id="<%= location.id %>">
       <div class="location-image" style="background-image: url(<%= location.photo %>)">
         <div class="dark-overlay">
         </div>
