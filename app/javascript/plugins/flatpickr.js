@@ -14,7 +14,9 @@ const setNewDate = (selectedDates, dateString, instance) => {
   const formattedDate = selectedDates[0].toLocaleDateString("en-US", dateDisplayOptions)
   const weekday = selectedDates[0].toLocaleDateString("en-US", weekDayDisplayOptions)
   const formattedTime = selectedDates[0].toLocaleTimeString("en-US", timeDisplayOptions);
-  const cardHtml = buildDateCardHtml(formattedDate, weekday, formattedTime, selectedDates[0]);
+  window.testdate = selectedDates[0]
+  const inputDate = selectedDates[0].toString().slice(0, 24)
+  const cardHtml = buildDateCardHtml(formattedDate, weekday, formattedTime, inputDate);
  dateCardContainer.insertAdjacentHTML('beforeend', cardHtml);
  instance.clear();
 }
