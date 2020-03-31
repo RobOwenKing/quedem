@@ -13,6 +13,7 @@ LocationVote.destroy_all
 DateVote.destroy_all
 LocationChoice.destroy_all
 DateChoice.destroy_all
+Attendance.destroy_all
 Hangout.destroy_all
 User.destroy_all
 

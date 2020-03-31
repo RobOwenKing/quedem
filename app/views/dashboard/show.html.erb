@@ -1,3 +1,59 @@
-#get all users hangouts
-#iterate over them
-#display a card
+<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Home</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Profile</a>
+  </li>
+</ul>
+<div class="tab-content" id="pills-tabContent">
+  <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+    <% if !current_user.hangouts.length.nil? %>
+    <h3>Created by you:</h3>
+    <% end %>
+    <div class="locations-card-container-dashboard">
+      <div>
+        <% current_user.hangouts.each do |hangout| %>
+        <div class="card-location">
+          <div class="location-image" style="background-image: url(<%= hangout.location&.photo %>)">
+          </div>
+          <div class="card-location-infos">
+            <h2><%= hangout.name %></h2>
+            <h3>At: <%= hangout.location&.title %></h3>
+            <h3>On: <%= hangout.date&.date %> </h3>
+            <h3>See more</h3>
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+    <% if !current_user.attendances.length.nil? %>
+    <h3>Attending:</h3>
+    <% end %>
+    <div class="locations-card-container-dashboard">
+      <div>
+        <% attending_hangouts = current_user.attendances.map(&:hangout) %>
+        <% attending_hangouts.each do |hangout| %>
+        <% hangout.location_choices.each do |location| %>
+        <div class="card-location">
+          <div class="location-image" style="background-image: url(<%= location.photo %>)">
+          </div>
+          <div class="card-location-infos">
+            <h2><%= hangout.name %></h2>
+            <h3>At: <%= location.title %></h3>
+            <h3>On: hangout date </h3>
+            <h3>See more</h3>
+          </div>
+        </div>
+        <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="create-hangout-btn-home">
+  <%= link_to "Create a hangout", new_hangout_path, class: "hangout-btn btn-primary" %>
+</div>
