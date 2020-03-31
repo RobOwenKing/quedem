@@ -11,7 +11,6 @@ module AttendanceHelper
       end
     end
     list
-
   end
 
   def going_list(hangout)
