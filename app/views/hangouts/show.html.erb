@@ -47,13 +47,15 @@
     <% @hangout.location_choices.each do |location| %>
     <div class="js-card-location card-location cursor-pointer <%= 'checked' if current_user&.voted_for_location?(location) %>" data-id="<%= location.id %>">
       <div class="location-image" style="background-image: url(<%= location.photo %>)">
-        <div class="dark-overlay">
-        </div>
-        <p class="rating"><%= location.rating %></p>
       </div>
       <div class="card-location-infos">
         <h2><%= location.title %></h2>
         <h3><%= location.address %></h3>
+        <ul class="star-list list-inline">
+        <% location.rating.to_i.round.times do %>
+          <li class="list-inline-item"><i class="rating-stars fas fa-star"></i></li>
+        <% end %>
+        </ul>
       </div>
     </div>
     <% end %>
