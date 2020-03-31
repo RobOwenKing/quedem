@@ -22,14 +22,16 @@ const setNewDate = (selectedDates, dateString, instance) => {
 }
 
 const buildDateCardHtml = (formattedDate, weekday, time, datetime) => {
-  return `<div class="card-date">
-     <div class="date-inputs">
-     <h2> ${formattedDate}</h2>
-     <h3> ${weekday}</h3>
-     <h4> ${time}</h4>
-     </div>
-     <input class="form-control string optional hidden-input" type="text" value="${datetime}" name="hangout[date_choices_attributes][]" id="hangout_date_choices_attributes">
-     </div>`
+  return `<div class="date-card-container">
+    <div class="card-date">
+    <div class="date-inputs">
+    <h2> ${formattedDate}</h2>
+    <h3> ${weekday}</h3>
+    <h4> ${time}</h4>
+    </div>
+    <input class="form-control string optional hidden-input" type="text" value="${datetime}" name="hangout[date_choices_attributes][]" id="hangout_date_choices_attributes">
+    </div>
+    </div>`
 }
 
 flatpickr(".multi-datepicker", {
