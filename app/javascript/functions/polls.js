@@ -93,9 +93,21 @@ const rsvpInput = document.getElementById("attendance");
 const rsvpListeners = () => {
   if (going !== null && maybe !== null && no !== null) {
     rsvp.forEach(answer => {
+      if (answer.classList.contains("checked")) {
+        rsvpInput.value = answer.dataset.id;
+      }
       answer.addEventListener('click', (event) => {
-        answer.classList.toggle("checked");
-        rsvpInput.value = answer.dataset.id
+        if (answer.classList.contains("checked")) {
+          answer.classList.remove("checked");
+          rsvpInput.value = "";
+        } else {
+          going.classList.remove("checked");
+          maybe.classList.remove("checked");
+          no.classList.remove("checked");
+
+          answer.classList.add("checked");
+          rsvpInput.value = answer.dataset.id;
+        }
       });
     });
   }
