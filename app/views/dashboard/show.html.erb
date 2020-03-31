@@ -21,7 +21,7 @@
             <h2><%= hangout.name %></h2>
             <h3>At: <%= hangout.location&.title %></h3>
             <h3>On: <%= hangout.date&.date %> </h3>
-            <h3>See more</h3>
+            <h3><%= link_to "details", hangout_path(@hangouts) %></h3>
           </div>
         </div>
         <% end %>
@@ -34,20 +34,17 @@
     <% end %>
     <div class="locations-card-container-dashboard">
       <div>
-        <% attending_hangouts = current_user.attendances.map(&:hangout) %>
-        <% attending_hangouts.each do |hangout| %>
-        <% hangout.location_choices.each do |location| %>
+        <% @attending_hangouts.each do |hangout| %>
         <div class="card-location">
-          <div class="location-image" style="background-image: url(<%= location.photo %>)">
+          <div class="location-image" style="background-image: url(<%= hangout.location&.photo %>)">
           </div>
           <div class="card-location-infos">
             <h2><%= hangout.name %></h2>
-            <h3>At: <%= location.title %></h3>
-            <h3>On: hangout date </h3>
-            <h3>See more</h3>
+            <h3>At: <%= hangout.location&.title %></h3>
+            <h3>On: <%= hangout.date&.date %> </h3>
+            <h3><%= link_to "details", hangout_path(@hangouts) %></h3>
           </div>
         </div>
-        <% end %>
         <% end %>
       </div>
     </div>
