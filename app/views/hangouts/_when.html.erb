@@ -5,7 +5,14 @@
 <div class="title-input-container">
 <%#= f.input :choices, as: :string, required: false, input_html: {class: "datepicker"} %>
   <div class="form-group">
-    <input type="text" class="form-control multi-datepicker" placeholder="Pick up to 3 dates" name="date_choices">
+    <div class="date-form-group">
+      <div class="date-form">
+        <input type="text" class="form-control multi-datepicker" placeholder="Pick up to 3 dates" name="date_choices">
+      </div>
+      <div class="date-form-button">
+        <a href='#' class='btn-primary date-select'>Select Date</a>
+      </div>
+    </div>
   </div>
 
 <!--   <input type="text" class="time" placeholder="Pick up to 3 times" name="time_choices"> -->
