@@ -18,7 +18,9 @@
             <h2><%= hangout.name %></h2>
             <h3><strong>At:</strong> <%= hangout.location&.title %></h3>
             <h3><strong>On:</strong> <%= hangout.date&.date.strftime("%A %b %d at: %I:%M %p") %> </h3>
+            <!-- fix this path -->
             <h3><%= link_to "details", hangout_path(@hangouts) %></h3>
+            <!-- fix this path -->
           </div>
         </div>
         <% end %>
@@ -36,7 +38,9 @@
             <h2><%= hangout.name %></h2>
             <h3><strong>At:</strong> <%= hangout.location&.title %></h3>
             <h3><strong>On:</strong> <%= hangout.date&.date %> </h3>
+            <!-- fix this path -->
             <h3><%= link_to "details", hangout_path(@hangouts) %></h3>
+            <!-- fix this path -->
           </div>
         </div>
         <% end %>
