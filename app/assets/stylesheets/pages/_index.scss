@@ -6,4 +6,25 @@
 
 body {
   background-color: white;
+  margin-right: -1px;
+}
+
+h2 {
+  font-family: $body-font;
+  font-weight: bold;
+  font-size: 46px;
+}
+
+h3 {
+  font-family: $body-font;
+  font-weight: bold;
+}
+
+h4 {
+  font-family: $body-font;
+  font-weight: bold;
+}
+
+p {
+  font-size: 18px;
 }
