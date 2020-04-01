@@ -88,9 +88,11 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body text-center">
-        <label for="myInput">Your Share Link: </label>
-        <input type="text" value="<%= request.original_url %>" id="myInput" readonly>
+      <div class="modal-body">
+        <div class="share-link">
+          <label for="myInput">Your Share Link: </label>
+          <input type="text" value="<%= request.original_url %>" id="myInput" readonly>
+        </div>
         <div class="copy-tooltip">
           <button id="copy-button">
             <span class="tooltiptext" id="myTooltip">Copy to clipboard</span>
