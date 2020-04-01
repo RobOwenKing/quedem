@@ -1,5 +1,8 @@
 <h2><%= @hangout.name %></h2>
 <p><%= @hangout.description %></p>
+<% if DateTime.now < @hangout.poll_closing_time %>
+  <p>Polls close in <%= distance_of_time_in_words(DateTime.now, @hangout.poll_closing_time) %></p>
+<% end %>
 
 <button type="button" class="btn btn-primary share-btn" data-toggle="modal" data-target="#exampleModal">
   Share
@@ -21,7 +24,7 @@
 
 <h3 class="show-page-header">When?</h3>
 <% if !@hangout.date_choices.length.nil? %>
-<p>Which choices work for you? You can pick more than one:</p>
+  <p>Which choices work for you? You can pick more than one:</p>
 <% end %>
 <div class="date-cards">
   <% @hangout.date_choices.each do |date| %>
@@ -44,24 +47,24 @@
 
 <h3 class="show-page-header">Where?</h3>
 <% if !@hangout.location_choices.length.nil? %>
-<p>Which choices work for you? You can pick more than one:</p>
+  <p>Which choices work for you? You can pick more than one:</p>
 <% end %>
 <div class="locations-card-container-show">
   <div>
     <% @hangout.location_choices.each do |location| %>
-    <div class="js-card-location card-location cursor-pointer <%= 'checked' if current_user&.voted_for_location?(location) %>" data-id="<%= location.id %>">
-      <div class="location-image" style="background-image: url(<%= location.photo %>)">
+      <div class="js-card-location card-location cursor-pointer <%= 'checked' if current_user&.voted_for_location?(location) %>" data-id="<%= location.id %>">
+        <div class="location-image" style="background-image: url(<%= location.photo %>)">
+        </div>
+        <div class="card-location-infos">
+          <h2><%= location.title %></h2>
+          <h3><%= location.address %></h3>
+          <ul class="star-list list-inline">
+            <% location.rating.to_i.round.times do %>
+              <li class="list-inline-item"><i class="rating-stars fas fa-star"></i></li>
+            <% end %>
+          </ul>
+        </div>
       </div>
-      <div class="card-location-infos">
-        <h2><%= location.title %></h2>
-        <h3><%= location.address %></h3>
-        <ul class="star-list list-inline">
-          <% location.rating.to_i.round.times do %>
-          <li class="list-inline-item"><i class="rating-stars fas fa-star"></i></li>
-          <% end %>
-        </ul>
-      </div>
-    </div>
     <% end %>
   </div>
 </div>
@@ -93,11 +96,12 @@
             <span class="tooltiptext" id="myTooltip">Copy to clipboard</span>
             <span><i class="fas fa-clipboard-list"></i></span>
           </button>
-            <span><%= social_share_button_tag(@hangout.name, url: hangout_url(@hangout), desc: @hangout.name) %></span>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          </div>
+          <span><%= social_share_button_tag(@hangout.name, url: hangout_url(@hangout), desc: @hangout.name) %></span>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         </div>
       </div>
     </div>
+  </div>
+</div>
