@@ -100,7 +100,7 @@ p {
   height: 62vh;
 }
 
-.dashboard-tabs {
+.dashboard-tabs-ul {
   display: flex;
   margin-top: 32px;
 }
@@ -122,12 +122,12 @@ p {
   border: 1px solid $purple-dark;
 }
 
-.nav-item > a {
+.dash-tab > a {
   color: $purple-dark;
   font-size: 18px;
 }
 
-.nav-pills .nav-link.active {
+.dashboard-tabs-ul > .dash-tab > .active {
   background-color: $purple-dark;
   border-radius: 0px;
 }

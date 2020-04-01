@@ -1,5 +1,5 @@
 // Each date choice card
-const dateChoices = document.querySelectorAll(".card-date");
+const dateChoices = document.querySelectorAll(".card-date-show-page");
 // The hidden input field to record the user's choices
 const dateInput = document.getElementById("date-votes");
 

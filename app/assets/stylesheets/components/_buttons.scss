@@ -42,7 +42,7 @@
 .btn-login:hover {
   opacity: 1;
   background-color: #ffffff;
-  color: $purple-dark
+  color: $purple-dark;
 }
 
 .create-hangout-btn {
@@ -93,4 +93,9 @@
   align-items: center;
   bottom: 80px;
   width: 100%;
+}
+
+.share-btn {
+  padding: 7px 151px;
+  font-size: 25px;
 }
