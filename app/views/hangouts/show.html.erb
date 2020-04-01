@@ -13,16 +13,39 @@
 <h3 class="show-page-header">Who?</h3>
 
 <div class="attendance">
-  <div id="going" data-id="going" class="cursor-pointer <%= 'checked' if current_user&.is_going?(@hangout) %>">I'll be there</div>
-  <div id="maybe" data-id="maybe" class="cursor-pointer <%= 'checked' if current_user&.is_maybe?(@hangout) %>">Not sure yet</div>
-  <div id="no" data-id="no" class="cursor-pointer <%= 'checked' if current_user&.is_no?(@hangout) %>">I can't make it</div>
+  <div>
+    <div id="going" data-id="going" class="cursor-pointer <%= 'checked' if current_user&.is_going?(@hangout) %>">I'll be there</div>
+    <div class="avatars-container">
+      <% going_list(@hangout).each do |user| %>
+        <div style="background-image: url(<%= cl_image_path user.photo.key%>)" class="avatar-attendance" title="<%= user.name %>"></div>
+      <% end %>
+    </div>
+  </div>
+  <div>
+    <div id="maybe" data-id="maybe" class="cursor-pointer <%= 'checked' if current_user&.is_maybe?(@hangout) %>">Not sure yet</div>
+    <div class="avatars-container">
+      <% maybe_list(@hangout).each do |user| %>
+        <div style="background-image: url(<%= cl_image_path user.photo.key%>)" class="avatar-attendance avatar-faded" title="<%= user.name %>"></div>
+      <% end %>
+    </div>
+  </div>
+  <div>
+    <div id="no" data-id="no" class="cursor-pointer <%= 'checked' if current_user&.is_no?(@hangout) %>">I can't make it</div>
+    <div class="avatars-container">
+      <% no_list(@hangout).each do |user| %>
+        <div style="background-image: url(<%= cl_image_path user.photo.key%>)" class="avatar-attendance avatar-faded" title="<%= user.name %>"></div>
+      <% end %>
+    </div>
+  </div>
 </div>
 
+<!--
 <div class="who-lists">
   <p>Going: <%= going_list(@hangout) %></p>
   <p>Not sure: <%= maybe_list(@hangout) %></p>
   <p>Can't make it: <%= no_list(@hangout) %></p>
 </div>
+-->
 
 <h3 class="show-page-header">When?</h3>
 <% if !@hangout.date_choices.length.nil? %>
@@ -78,6 +101,7 @@
   <input type="hidden" id="attendance" name="attendance">
   <input type="hidden" id="date-votes" name="date_votes">
   <input type="hidden" id="location-votes" name="location_votes">
+  <input type="hidden" name="user_id" value="<%= @user.id %>">
   <%= f.input :hangout_id, as: :hidden, :input_html => { :value => @hangout.id } %>
   <%= f.submit "Vote", class: "btn-primary share-btn" %>
 <% end %>
