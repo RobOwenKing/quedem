@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :create, :update ]
 
   def create
-    user = User.create(name: params[:user][:name], password: params[:user][:password], email: params[:user][:email] )
+    user = User.create(name: params[:user][:name], password: params[:user][:password], email: params[:user][:email], photo: params[:user][:photo] )
     hangout = params[:hangout_id]
 
     process_vote_details(user, hangout)

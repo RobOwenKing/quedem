@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  require 'open-uri'
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -7,6 +8,14 @@ class User < ApplicationRecord
   has_many :date_votes
   has_many :attendances
   has_many :hangouts
+  has_one_attached :photo
+
+  after_create :attach_avatar, unless: Proc.new { self.photo.attached? }
+
+  def attach_avatar
+    avatar = URI.open('https://source.unsplash.com/500x500/?avatar')
+    self.photo.attach(io: avatar, filename: 'avatar.jpg', content_type: 'image/jpg')
+  end
 
   def has_voted_for(hangout)
     date_votes.any?{ |dv| dv.date_choice.hangout == hangout } || location_votes.any?{ |dv| dv.location_choice.hangout == hangout }
