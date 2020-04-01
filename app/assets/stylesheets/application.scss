@@ -15,12 +15,13 @@
 // Social Buttons
 @import "social-share-button";
 
-$size: 30px;
+$size: 45px;
 
 .social-share-button {
   .ssb-icon {
     background-size: $size $size;
     height: $size;
     width: $size;
+    padding: 35px;
   }
 }
