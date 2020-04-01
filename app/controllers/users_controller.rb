@@ -4,9 +4,7 @@ class UsersController < ApplicationController
   # def create
   #   user = User.create(name: params[:user][:name], password: params[:user][:password], email: params[:user][:email] )
   #   hangout = params[:hangout_id]
-
   #   process_vote_details(user, hangout)
-
   #   flash.notice("Your votes have been saved")
   # end
 
@@ -49,5 +47,7 @@ class UsersController < ApplicationController
 
     rsvp = params[:attendance]
     Attendance.create(user: user, hangout_id: hangout, response: rsvp )
+    @hangout = Hangout.find(hangout)
+    UserMailer.with(user: @hangout.user, hangout: @hangout, voter: current_user).vote_casted.deliver_now
   end
 end

@@ -7,6 +7,14 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require "open-uri"
 
+def handle_string_io_as_file(io, filename)
+  return io unless io.class == StringIO
+  file = Tempfile.new(["temp",".png"], encoding: 'ascii-8bit')
+  file.binmode
+  file.write io.read
+  file.open
+end
+
 puts "Lets go!"
 
 LocationVote.destroy_all
@@ -23,6 +31,9 @@ marco = User.create!(
   name: "Marco",
   email: "marco@gmail.com",
   password: "marcoquedem")
+
+avatar_marco = URI.open('https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?ixlib=rb-1.2.1&auto=format&fit=crop&w=720&q=80')
+marco.photo.attach(io: handle_string_io_as_file(avatar_marco, 'image.png'), filename: 'nes.png', content_type: 'image/png')
 
 puts "created a user"
 
