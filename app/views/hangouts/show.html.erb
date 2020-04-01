@@ -4,9 +4,11 @@
   <p>Polls close in <%= distance_of_time_in_words(DateTime.now, @hangout.poll_closing_time) %></p>
 <% end %>
 
-<button type="button" class="btn btn-primary share-btn" data-toggle="modal" data-target="#exampleModal">
-  Share
-</button>
+<% if @hangout.user == current_user %>
+  <button type="button" class="btn btn-primary share-btn" data-toggle="modal" data-target="#exampleModal">
+    Share
+  </button>
+<% end %>
 
 <h3 class="show-page-header">Who?</h3>
 
