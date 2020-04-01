@@ -4,37 +4,42 @@
   height: 90vh;
 }
 
+.form-section{
+  height: 100%;
+  position: relative;
+}
+
 .form-what {
   position: absolute;
   left: 0px;
   height: 100%;
-}
-
-.form-section{
-  height: 100%;
-  position: relative;
+  width: 100%;
+  transition: left ease-out 600ms;
 }
 
 .form-when {
   position: absolute;
   left: 100vw;
   height: 100%;
-  transition: left ease-out 300ms;
+  width: 100%;
+  transition: left ease-out 600ms;
 }
 
 .form-where {
   position: absolute;
   left: 200vw;
   height: 100%;
-  transition: left ease-out 300ms;
+  width: 100%;
+  transition: left ease-out 600ms;
 
 }
 
 .form-close-poll {
   position: absolute;
   left: 200vw;
-  transition: left ease-out 300ms;
   height: 100%;
+  width: 100%;
+  transition: left ease-out 600ms;
 }
 
 .form-hide {

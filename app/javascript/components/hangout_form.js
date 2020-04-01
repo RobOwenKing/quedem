@@ -82,7 +82,6 @@ const initHangoutForm = () => {
   }
 }
 
-
 const jumpToWhat = (e) => {
   e.preventDefault()
   whatForm.style.left = '0'
