@@ -48,6 +48,6 @@ class UsersController < ApplicationController
     rsvp = params[:attendance]
     Attendance.create(user: user, hangout_id: hangout, response: rsvp )
     @hangout = Hangout.find(hangout)
-    UserMailer.with(user: @hangout.user, hangout: @hangout, voter: current_user).vote_casted.deliver_now
+    UserMailer.with(user: @hangout.user, hangout: @hangout, voter: user).vote_casted.deliver_now
   end
 end
