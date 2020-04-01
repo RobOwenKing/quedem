@@ -4,14 +4,23 @@
   margin-bottom: 8px;
 }
 
-.attendance div {
+.attendance > div {
+  margin-right: 8px;
+  width: 100%;
+}
+
+.avatars-container {
+  display: flex;
+  flex: wrap;
+}
+
+#going, #maybe, #no {
   border: solid 1px $purple-dark;
   padding: 0px 4px;
-  margin-right: 8px;
   font-size: 22px;
   font-weight: bold;
-  width: 100%;
   height: 55px;
+  width: 100%;
   text-align: center;
   display: flex;
   align-items: center;
@@ -22,4 +31,17 @@
 .attendance div.checked {
   background-color: $purple-dark;
   color: white;
+}
+
+.avatar-attendance {
+  width: 40px;
+  height: 40px;
+  background-size: cover;
+  border-radius: 50%;
+  margin-top: 8px;
+  margin-left: 8px;
+}
+
+.avatar-faded {
+  opacity: 0.6;
 }
