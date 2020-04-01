@@ -57,7 +57,7 @@ const addPlaceCard = (place, container) => {
         card += `</ul
       </div>
   </div>`
-  container.insertAdjacentHTML('beforeend', card)
+  container.insertAdjacentHTML('afterbegin', card)
   const deleteButtons = document.querySelectorAll(".delete-location")
   console.log(deleteButtons)
   deleteButtons[deleteButtons.length - 1].addEventListener("click", () => {
