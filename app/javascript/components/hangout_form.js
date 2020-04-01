@@ -55,13 +55,13 @@ const validateWhere = (nextBtn) => {
 const backButtonForm = () => {
   if (form) {
     const backToWhat = whenForm.querySelector(".back-btn");
-    backToWhat.addEventListener('click', jumpBackToWhat)
+    backToWhat.addEventListener('click', jumpToWhat)
 
     const backToWhen = whereForm.querySelector(".back-btn");
-    backToWhen.addEventListener('click', jumpBackToWhen)
+    backToWhen.addEventListener('click', jumpToWhen)
 
     const backToWhere = closeForm.querySelector(".back-btn");
-    backToWhere.addEventListener('click', jumpBackToWhere)
+    backToWhere.addEventListener('click', jumpToWhere)
   }
 }
 
@@ -82,54 +82,39 @@ const initHangoutForm = () => {
   }
 }
 
-const jumpBackToWhat = (e) => {
+
+const jumpToWhat = (e) => {
   e.preventDefault()
-  whenForm.classList.remove("form-show");
-  whenForm.classList.add("form-hide");
+  whatForm.style.left = '0'
 
-  whatForm.classList.add("form-show");
+  whenForm.style.left = '200vw'
+  whereForm.style.left = '200vw'
+  closeForm.style.left = '200vw'
 }
-
-const jumpBackToWhen = (e) => {
-  e.preventDefault()
-  whereForm.classList.remove("form-show");
-  whereForm.classList.add("form-hide");
-
-  whenForm.classList.add("form-show");
-}
-
-const jumpBackToWhere = (e) => {
-  e.preventDefault()
-  closeForm.classList.remove("form-show");
-  closeForm.classList.add("form-hide");
-
-  whereForm.classList.add("form-show")
-}
-
 
 
 const jumpToWhen = (e) => {
   e.preventDefault()
-  whatForm.classList.remove("form-show");
-  whatForm.classList.add("form-hide");
-
-  whenForm.classList.add("form-show");
+  whatForm.style.left = '-200vw'
+  whenForm.style.left = '0'
+  whereForm.style.left = '200vw'
+  closeForm.style.left = '200vw'
 }
 
 const jumpToWhere = (e) => {
   e.preventDefault()
-  whenForm.classList.remove("form-show");
-  whenForm.classList.add("form-hide");
-
-  whereForm.classList.add("form-show");
+  whatForm.style.left = '-200vw'
+  whenForm.style.left = '-200vw'
+  whereForm.style.left = '0'
+  closeForm.style.left = '200vw'
 }
 
 const jumpToClose = (e) => {
   e.preventDefault()
-  whereForm.classList.remove("form-show");
-  whereForm.classList.add("form-hide");
-
-  closeForm.classList.add("form-show");
+  whatForm.style.left = '-200vw'
+  whenForm.style.left = '-200vw'
+  whereForm.style.left = '-200vw'
+  closeForm.style.left = '0vw'
 }
 
 export { initHangoutForm, backButtonForm }
