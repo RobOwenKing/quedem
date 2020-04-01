@@ -75,7 +75,7 @@
   <input type="text" id="date-votes" name="date_votes">
   <input type="text" id="location-votes" name="location_votes">
   <%= f.input :hangout_id, as: :hidden, :input_html => { :value => @hangout.id } %>
-  <%= f.submit "Vote", class: "hangout-btn btn-primary" %>
+  <%= f.submit "Vote", class: "btn btn-primary share-btn" %>
 <% end %>
 
 
