@@ -7,7 +7,6 @@
 .attendance div {
   border: solid 1px $purple-dark;
   padding: 0px 4px;
-  margin-right: 8px;
   font-size: 22px;
   font-weight: bold;
   width: 100%;
@@ -16,10 +15,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2)
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3)
 }
 
 .attendance div.checked {
   background-color: $purple-dark;
   color: white;
+}
+
+#maybe {
+  margin-right: 8px;
+  margin-left: 8px;
 }
