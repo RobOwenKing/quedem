@@ -68,18 +68,12 @@
 </div>
 
 <%= simple_form_for @user do |f| %>
-<%= f.input :name %>
-<input type="text" id="attendance" name="attendance">
-<input type="text" id="date-votes" name="date_votes">
-<input type="text" id="location-votes" name="location_votes">
-<%= f.input :hangout_id, as: :hidden, :input_html => { :value => @hangout.id } %>
-<% if current_user.nil? %>
-<%= f.input :email, as: :hidden, :input_html => { :value => "noemail#{User.last.id + 1}@goquedem.com" } %>
-<%= f.input :password, as: :hidden, :input_html => { :value => "alsjdbguaw1324bjuka49adsf8" } %>
-<% end %>
-
-<%= f.submit "Vote", class: "hangout-btn btn-primary" %>
-
+  <%= f.input :name %>
+  <input type="text" id="attendance" name="attendance">
+  <input type="text" id="date-votes" name="date_votes">
+  <input type="text" id="location-votes" name="location_votes">
+  <%= f.input :hangout_id, as: :hidden, :input_html => { :value => @hangout.id } %>
+  <%= f.submit "Vote", class: "hangout-btn btn-primary" %>
 <% end %>
 
 
