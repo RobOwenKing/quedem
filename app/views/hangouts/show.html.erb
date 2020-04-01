@@ -1,10 +1,10 @@
-<h2><%= @hangout.name %></h2>
+<h2 class="show-page-title"><%= @hangout.name %></h2>
 <p><%= @hangout.description %></p>
 <% if DateTime.now < @hangout.poll_closing_time %>
   <p>Polls close in <%= distance_of_time_in_words(DateTime.now, @hangout.poll_closing_time) %></p>
 <% end %>
 
-<button type="button" class="btn btn-primary share-btn" data-toggle="modal" data-target="#exampleModal">
+<button type="button" class="btn-primary share-btn" data-toggle="modal" data-target="#exampleModal">
   Share
 </button>
 
@@ -75,7 +75,7 @@
   <input type="text" id="date-votes" name="date_votes">
   <input type="text" id="location-votes" name="location_votes">
   <%= f.input :hangout_id, as: :hidden, :input_html => { :value => @hangout.id } %>
-  <%= f.submit "Vote", class: "btn btn-primary share-btn" %>
+  <%= f.submit "Vote", class: "btn-primary share-btn" %>
 <% end %>
 
 
