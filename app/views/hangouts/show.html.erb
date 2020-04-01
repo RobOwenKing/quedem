@@ -1,11 +1,11 @@
-<h2><%= @hangout.name %></h2>
+<h2 class="show-page-title"><%= @hangout.name %></h2>
 <p><%= @hangout.description %></p>
 <% if DateTime.now < @hangout.poll_closing_time %>
   <p>Polls close in <%= distance_of_time_in_words(DateTime.now, @hangout.poll_closing_time) %></p>
 <% end %>
 
 <% if @hangout.user == current_user %>
-  <button type="button" class="btn btn-primary share-btn" data-toggle="modal" data-target="#exampleModal">
+  <button type="button" class="btn-primary share-btn" data-toggle="modal" data-target="#exampleModal">
     Share
   </button>
 <% end %>
@@ -79,7 +79,7 @@
   <input type="hidden" id="date-votes" name="date_votes">
   <input type="hidden" id="location-votes" name="location_votes">
   <%= f.input :hangout_id, as: :hidden, :input_html => { :value => @hangout.id } %>
-  <%= f.submit "Vote", class: "btn btn-primary share-btn" %>
+  <%= f.submit "Vote", class: "btn-primary share-btn" %>
 <% end %>
 
 
@@ -92,18 +92,17 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body text-center">
-        <label for="myInput">Your Share Link: </label>
-        <input type="text" value="<%= request.original_url %>" id="myInput" readonly>
+      <div class="modal-body">
+        <div class="share-link">
+          <label for="myInput">Your Share Link: </label>
+          <input type="text" value="<%= request.original_url %>" id="myInput" readonly>
+        </div>
         <div class="copy-tooltip">
           <button id="copy-button">
             <span class="tooltiptext" id="myTooltip">Copy to clipboard</span>
             <span><i class="fas fa-clipboard-list"></i></span>
           </button>
           <span><%= social_share_button_tag(@hangout.name, url: hangout_url(@hangout), desc: @hangout.name) %></span>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         </div>
       </div>
     </div>

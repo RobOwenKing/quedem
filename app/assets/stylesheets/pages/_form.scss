@@ -108,23 +108,27 @@
 
 .date-form-group {
   display: flex;
-  justify-content: space-around;
   align-items: center;
+  margin-bottom: 40px;
+  width: 80%;
+  margin: 10px auto 10px auto;
 }
 
 .date-select {
-  padding: 18px 32px;
+  padding: 19px 32px;
 }
 
 .poll-form-group {
   display: flex;
-  justify-content: space-around;
   align-items: center;
   margin-bottom: 40px;
+  width: 80%;
+  margin: 20px auto 50px auto;
 }
 
 .poll-form {
   height: 55px;
+  flex-grow: 1;
 }
 
 .closeTimeContainer {
