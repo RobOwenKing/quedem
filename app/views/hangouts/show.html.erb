@@ -68,12 +68,12 @@
 </div>
 
 <%= simple_form_for @user do |f| %>
-  <%= f.input :name %>
-  <input type="text" id="attendance" name="attendance">
-  <input type="text" id="date-votes" name="date_votes">
-  <input type="text" id="location-votes" name="location_votes">
-  <%= f.input :hangout_id, as: :hidden, :input_html => { :value => @hangout.id } %>
-  <%= f.submit "Vote", class: "hangout-btn btn-primary" %>
+<%= f.input :name %>
+<input type="text" id="attendance" name="attendance">
+<input type="text" id="date-votes" name="date_votes">
+<input type="text" id="location-votes" name="location_votes">
+<%= f.input :hangout_id, as: :hidden, :input_html => { :value => @hangout.id } %>
+<%= f.submit "Vote", class: "hangout-btn btn-primary" %>
 <% end %>
 
 
@@ -93,11 +93,13 @@
           <button id="copy-button">
             <span class="tooltiptext" id="myTooltip">Copy to clipboard</span>
             <span><i class="fas fa-clipboard-list"></i></span>
-            <span><%= social_share_button_tag(@hangout.name, url: hangout_url(@hangout), desc: @hangout.name) %></span>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          </div>
+          </button>
+          <span><%= social_share_button_tag(@hangout.name, url: hangout_url(@hangout), desc: @hangout.name) %></span>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         </div>
       </div>
     </div>
+  </div>
+</div>
