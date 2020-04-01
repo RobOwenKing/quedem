@@ -25,18 +25,27 @@
   position: relative;
 }
 
+.card-date-show-page {
+  width: 103px;
+  height: 120px;
+  border: 2px solid $purple-dark;
+  color: #000000;
+  text-align: center;
+  position: relative;
+}
+
 .delete-date-card {
   position: absolute;
   top: -3px;
   right: -6px;
 }
 
-.card-date.checked {
+.card-date-show-page.checked {
   background-color: $purple-dark;
   color: white;
 }
 
-.card-date h2 {
+.card-date h2, .card-date-show-page h2 {
   font-family: $body-font;
   font-style: normal;
   font-weight: bold;
@@ -46,7 +55,7 @@
   margin: 12px 8px;
 }
 
-.card-date h3 {
+.card-date h3, .card-date-show-page h3 {
   font-family: $body-font;
   font-style: normal;
   font-weight: bold;
@@ -55,7 +64,7 @@
   margin: 12px 8px;
 }
 
-.card-date h4 {
+.card-date h4, .card-date-show-page h4 {
   font-family: $body-font;
   font-style: normal;
   font-weight: bold;
@@ -65,9 +74,9 @@
 }
 
 .date-votes {
-  border-color: $purple-dark;
-  border-style: solid;
-  border-width: 0px 2px 2px 2px;
+  // border-color: $purple-dark;
+  // border-style: solid;
+  // border-width: 0px 2px 2px 2px;
   text-align: center;
 }
 

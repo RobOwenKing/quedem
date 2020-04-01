@@ -1,6 +1,10 @@
 <h2><%= @hangout.name %></h2>
 <p><%= @hangout.description %></p>
 
+<button type="button" class="btn btn-primary share-btn" data-toggle="modal" data-target="#exampleModal">
+  Share
+</button>
+
 <h3 class="show-page-header">Who?</h3>
 
 <div class="attendance">
@@ -17,12 +21,12 @@
 
 <h3 class="show-page-header">When?</h3>
 <% if !@hangout.date_choices.length.nil? %>
-  <p>Which choices work for you? You can pick more than one:</p>
+<p>Which choices work for you? You can pick more than one:</p>
 <% end %>
-<div class="date-cards date-cards-container-show">
+<div class="date-cards">
   <% @hangout.date_choices.each do |date| %>
   <div class="date-card-container">
-    <div class="card-date cursor-pointer <%= 'checked' if current_user&.voted_for_date?(date) %>" data-id="<%= date.id %>">
+    <div class="card-date-show-page cursor-pointer <%= 'checked' if current_user&.voted_for_date?(date) %>" data-id="<%= date.id %>">
       <h2><%= three_letter_month(date.date) + " " + date.date.strftime("%d") %> </h2>
       <h3>
         <%= date.date.strftime("%A") %>
@@ -40,7 +44,7 @@
 
 <h3 class="show-page-header">Where?</h3>
 <% if !@hangout.location_choices.length.nil? %>
-  <p>Which choices work for you? You can pick more than one:</p>
+<p>Which choices work for you? You can pick more than one:</p>
 <% end %>
 <div class="locations-card-container-show">
   <div>
@@ -52,9 +56,9 @@
         <h2><%= location.title %></h2>
         <h3><%= location.address %></h3>
         <ul class="star-list list-inline">
-        <% location.rating.to_i.round.times do %>
+          <% location.rating.to_i.round.times do %>
           <li class="list-inline-item"><i class="rating-stars fas fa-star"></i></li>
-        <% end %>
+          <% end %>
         </ul>
       </div>
     </div>
@@ -68,29 +72,31 @@
   <input type="text" id="date-votes" name="date_votes">
   <input type="text" id="location-votes" name="location_votes">
   <%= f.input :hangout_id, as: :hidden, :input_html => { :value => @hangout.id } %>
-  <% if current_user.nil? %>
-  <%= f.input :email, as: :hidden, :input_html => { :value => "noemail#{User.last.id + 1}@goquedem.com" } %>
-  <%= f.input :password, as: :hidden, :input_html => { :value => "alsjdbguaw1324bjuka49adsf8" } %>
-<% end %>
-
   <%= f.submit "Vote", class: "hangout-btn btn-primary" %>
-
 <% end %>
 
-<% if @hangout.user == current_user %>
-  <div class="share-link">
-    <div class="link-and-clipboard">
-      <label for="myInput">Your Share Link: </label>
-      <input type="text" value="<%= request.original_url %>" id="myInput" readonly>
-      <div class="copy-tooltip">
-        <button id="copy-button">
-          <span class="tooltiptext" id="myTooltip">Copy to clipboard</span>
-          <span><i class="fas fa-clipboard-list"></i></span>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Share your hangout!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
         </button>
       </div>
+      <div class="modal-body text-center">
+        <label for="myInput">Your Share Link: </label>
+        <input type="text" value="<%= request.original_url %>" id="myInput" readonly>
+        <div class="copy-tooltip">
+          <button id="copy-button">
+            <span class="tooltiptext" id="myTooltip">Copy to clipboard</span>
+            <span><i class="fas fa-clipboard-list"></i></span>
+            <span><%= social_share_button_tag(@hangout.name, url: hangout_url(@hangout), desc: @hangout.name) %></span>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="text-center">
-      <span><%= social_share_button_tag(@hangout.name, url: hangout_url(@hangout), desc: @hangout.name) %></span>
-    </div>
-  </div>
-<% end %>

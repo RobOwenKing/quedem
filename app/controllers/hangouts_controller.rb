@@ -3,7 +3,7 @@ class HangoutsController < ApplicationController
   before_action :set_hangout, only: :show
 
   def show
-    @user = current_user || User.new
+    @user = current_user || User.create(email: "noemail#{User.last.id + 1}@goquedem.com", password: "alsjdbguaw1324bjuka49adsf8")
   end
 
   def new
