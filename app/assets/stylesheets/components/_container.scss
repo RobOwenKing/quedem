@@ -5,3 +5,8 @@
 .hidden-input {
   display: none;
 }
+
+.container-dash {
+  height: calc(100vh - 90px);
+  position: relative;
+}
