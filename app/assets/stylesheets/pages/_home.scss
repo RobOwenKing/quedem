@@ -7,11 +7,17 @@
   margin-top: 40px;
 }
 
+.home-img {
+  display: flex;
+  justify-content: center;
+}
+
 .home-img img {
   width: 345px;
   height: 286px;
 }
 
 .container-home {
-  height: 100%;
+  height: calc(100vh - 95px);
+  position: relative;
 }
