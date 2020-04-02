@@ -6,6 +6,10 @@
     <%= image_tag "home-img.jpg" %>
   </div>
   <div class="create-hangout-btn-home">
-    <%= link_to "Create a hangout", new_hangout_path, class: "hangout-btn btn-primary" %>
+    <% if user_signed_in? %>
+      <%= link_to "Create a hangout", new_hangout_path, class: "hangout-btn btn-primary" %>
+    <% else %>
+      <%= link_to "Create a hangout", new_user_registration_path, class: "hangout-btn btn-primary" %>
+    <% end %>
   </div>
 </div>
