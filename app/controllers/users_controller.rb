@@ -9,7 +9,11 @@ class UsersController < ApplicationController
   # end
 
   def update
-    user = current_user || User.last
+    user = current_user || User.find(params[:user_id])
+    if user.name.nil?
+      user.name = params[:user][:name]
+      user.save
+    end
     hangout = params[:user][:hangout_id]
 
     process_vote_details(user, hangout)
