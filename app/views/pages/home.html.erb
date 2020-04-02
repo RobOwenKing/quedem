@@ -1,11 +1,70 @@
 <div class="container-home">
-  <div class="tag-line">
-    <h2>Find the best time and place to meet your friends.</h2>
+
+
+
+ <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators" style="bottom: -40px;">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <div class="tag-line">
+        <h2>Find the best time and place to meet your friends.</h2>
+      </div>
+      <div class="home-img">
+        <%= image_tag "undraw_hang_out_h9ud.svg" %>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div class="tag-line">
+        <h2>Our polling system takes the hassle out of choosing the when and the where.</h2>
+      </div>
+      <div class="home-img">
+        <%= image_tag "undraw_online_friends_x73e.svg" %>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div class="tag-line">
+        <h2>So you can spend time hanging out with your friends, not planning to.</h2>
+      </div>
+      <div class="home-img">
+        <%= image_tag "undraw_horror_movie_3988" %>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div class="tag-line">
+        <h2>Create your hangout now!</h2>
+      </div>
+      <div class="home-img">
+        <%= image_tag "undraw_having_fun_iais.svg" %>
+      </div>
+    </div>
   </div>
-  <div class="home-img">
-    <%= image_tag "home-img.jpg" %>
-  </div>
-  <div class="create-hangout-btn-home">
-    <%= link_to "Create a hangout", new_hangout_path, class: "hangout-btn btn-primary" %>
-  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
 </div>
+
+
+
+
+
+<div class="create-hangout-btn-home">
+  <%= link_to "Create a hangout", new_hangout_path, class: "hangout-btn btn-primary" %>
+</div>
+</div>
+
+
+
+
+
+
+
