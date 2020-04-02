@@ -1,0 +1,5 @@
+meta_product_name: "Quedem"
+meta_title: "Quedem - Find the best time and place to meet your friends"
+meta_description: "A social app that takes the hassle out of making plans with your friends. With a few clicks, you'll be hanging out."
+meta_image: "home-img.jpg" # should exist in `app/assets/images/`
+twitter_account: "@quedem_twitter_account"   # required for Twitter Cards
